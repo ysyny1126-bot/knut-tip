@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="한국교통대학교 충주캠퍼스 신입생을 위한 맛집·카페·숨은 장소 가이드">
+</head>
+<body style="margin:0">
+<title>교통대 꿀팁 가이드</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 톤: 종이 질감의 따뜻한 회백색 + 짙은 소나무색 하나만 강조. 제목은 명조, 본문은 고딕. 그림은 채도 낮은 두 톤 */
+:root {
+  --bg: #f6f4ef; --surface: #fffdf9; --sunk: #eeebe4; --fg: #1d1c1a; --muted: #6d6960; --faint: #8f8a80; --line: #e3dfd6; --line-2: #d4cfc4;
+  --ink: #1f3a2e; --ink-fg: #f6f4ef; --ink-soft: #e3ebe5; --accent: #b4442d; --accent-soft: #f4e3dd;
+  --ok: #2e7a52; --warn: #a8700d; --off: #8b877e;
+  --t1: #ebe5d8; --s1: #b7aa90; --t2: #dfe6df; --s2: #8ea593; --t3: #e0e5ec; --s3: #92a3b8; --t4: #eee1db; --s4: #c39886; --t5: #e5e1ec; --s5: #a39bb9;
+  --shadow: 0 1px 2px rgba(29,28,26,.05), 0 8px 24px rgba(29,28,26,.07);
+  --f-display: "Noto Serif KR", "AppleMyungjo", "Batang", serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141413; --surface: #1c1c1a; --sunk: #232320; --fg: #ecebe6; --muted: #a4a097; --faint: #7d796f; --line: #2f2e2a; --line-2: #3d3b36;
+  --ink: #8fc4a6; --ink-fg: #10140f; --ink-soft: #1f2b24; --accent: #e58a73; --accent-soft: #3a2621;
+  --ok: #6cc495; --warn: #e0b25a; --off: #8b877e;
+  --t1: #2a2823; --s1: #6f6656; --t2: #232b25; --s2: #5d7464; --t3: #232830; --s3: #5f6f83; --t4: #2d2522; --s4: #80635a; --t5: #28262f; --s5: #6d6683;
+  --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.3); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141413; --surface: #1c1c1a; --sunk: #232320; --fg: #ecebe6; --muted: #a4a097; --faint: #7d796f; --line: #2f2e2a; --line-2: #3d3b36;
+  --ink: #8fc4a6; --ink-fg: #10140f; --ink-soft: #1f2b24; --accent: #e58a73; --accent-soft: #3a2621;
+  --ok: #6cc495; --warn: #e0b25a; --off: #8b877e;
+  --t1: #2a2823; --s1: #6f6656; --t2: #232b25; --s2: #5d7464; --t3: #232830; --s3: #5f6f83; --t4: #2d2522; --s4: #80635a; --t5: #28262f; --s5: #6d6683;
+  --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.3); color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+button, input, textarea, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--f-mono); }
+.kicker { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+
+/* 상단바 */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; white-space: nowrap; }
+.logo b { font-family: var(--f-display); font-weight: 700; font-size: 19px; letter-spacing: -0.02em; }
+.logo small { font-family: var(--f-mono); font-size: 11px; color: var(--faint); letter-spacing: .06em; }
+.nav { display: flex; align-items: center; gap: 2px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.nav a, .nav button { text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 14px; white-space: nowrap; color: var(--muted); border: 0; background: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.nav a:hover, .nav button:hover { color: var(--fg); background: var(--sunk); }
+.nav .favlink b { font-family: var(--f-mono); font-weight: 500; font-size: 12px; color: var(--accent); }
+.nav .admin { border: 1px solid var(--line-2); color: var(--fg); }
+.nav .admin i { font-style: normal; font-family: var(--f-mono); font-size: 11px; background: var(--accent); color: #fff; border-radius: 99px; padding: 0 6px; }
+
+/* 첫 화면 */
+.hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: end; padding-block: 56px 40px; }
+.hero h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(34px, 5.4vw, 56px); line-height: 1.12; letter-spacing: -0.035em; margin: 14px 0 14px; text-wrap: balance; }
+.hero p.lede { margin: 0 0 26px; color: var(--muted); font-size: 16px; max-width: 34em; }
+.search { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 12px; padding: 6px 6px 6px 16px; box-shadow: var(--shadow); }
+.search svg { flex: none; color: var(--faint); }
+.search input { flex: 1; min-width: 0; border: 0; background: none; font-size: 16px; padding: 10px 0; outline: none; }
+.search button { border: 0; background: var(--ink); color: var(--ink-fg); font-weight: 600; padding: 11px 20px; border-radius: 8px; cursor: pointer; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip { border: 1px solid var(--line-2); background: transparent; border-radius: 999px; padding: 5px 12px; font-size: 13px; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.chip:hover { color: var(--fg); border-color: var(--fg); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+
+.live { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 8px; }
+.live header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.live h2 { font-family: var(--f-display); font-size: 18px; margin: 0; letter-spacing: -0.02em; }
+.live .clock { font-family: var(--f-mono); font-size: 12px; color: var(--faint); }
+.live ul { list-style: none; margin: 0; padding: 0; }
+.live li + li { border-top: 1px solid var(--line); }
+.live li button { all: unset; box-sizing: border-box; width: 100%; display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; cursor: pointer; font-size: 14px; }
+.live li button:focus-visible { outline: 2px solid var(--ink); }
+.live li span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.live .more { display: block; width: 100%; text-align: left; border: 0; background: none; color: var(--ink); font-weight: 600; font-size: 13.5px; padding: 12px 0 10px; cursor: pointer; border-top: 1px solid var(--line); }
+.live .empty { color: var(--muted); font-size: 13.5px; padding: 10px 0 14px; }
+
+/* 영업 상태 */
+.st { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; white-space: nowrap; color: var(--off); }
+.st::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+.st.open { color: var(--ok); } .st.soon, .st.break { color: var(--warn); }
+.st.unsure::before { background: none; box-shadow: inset 0 0 0 1.5px currentColor; }
+
+/* 안내 띠 */
+.band { background: var(--ink); color: var(--ink-fg); border-radius: 16px; padding: 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; margin-bottom: 64px; }
+.band h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.25; letter-spacing: -0.03em; margin: 8px 0 18px; text-wrap: balance; }
+.band .kicker { color: color-mix(in srgb, var(--ink-fg) 60%, transparent); }
+.band ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+.band li { padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--ink-fg) 18%, transparent); display: grid; gap: 4px; }
+.band li .n { font-family: var(--f-mono); font-size: 12px; opacity: .65; }
+.band li a { font-weight: 600; text-decoration: none; }
+.band li a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.band li p { margin: 0; font-size: 13.5px; opacity: .82; }
+.band .cta { border: 1px solid color-mix(in srgb, var(--ink-fg) 40%, transparent); background: none; color: var(--ink-fg); padding: 9px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+.band .cta:hover { background: color-mix(in srgb, var(--ink-fg) 12%, transparent); }
+
+/* 섹션 공통 */
+section.block { margin-bottom: 64px; }
+.head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.head h3 { font-family: var(--f-display); font-weight: 700; font-size: clamp(21px, 2.6vw, 26px); letter-spacing: -0.03em; margin: 4px 0 0; }
+.head p { margin: 4px 0 0; color: var(--muted); font-size: 13.5px; }
+.arrows { display: flex; gap: 6px; flex: none; }
+.arrows button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-2); background: none; cursor: pointer; display: grid; place-items: center; color: var(--muted); }
+.arrows button:hover { color: var(--fg); border-color: var(--fg); }
+
+/* 관심사 */
+.tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.tile { border: 0; background: none; padding: 0; cursor: pointer; text-align: left; display: grid; gap: 10px; min-width: 0; }
+.tile .pic { position: relative; aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; }
+.tile .pic svg { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .5s ease; }
+.tile:hover .pic svg { transform: scale(1.04); }
+.tile b { font-weight: 600; font-size: 15px; }
+.tile small { display: block; color: var(--faint); font-size: 12.5px; font-family: var(--f-mono); }
+
+/* 카드 */
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, calc((100% - 60px) / 4)); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; scrollbar-width: none; }
+.rail > * { scroll-snap-align: start; }
+.card { position: relative; display: flex; flex-direction: column; gap: 12px; min-width: 0; cursor: pointer; }
+.thumb { position: relative; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; }
+.thumb svg.art { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .5s ease; }
+.card:hover .thumb svg.art { transform: scale(1.04); }
+.thumb .badge { position: absolute; left: 10px; top: 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); color: var(--fg); font-size: 11.5px; font-weight: 500; padding: 3px 9px; border-radius: 6px; }
+.fav { position: absolute; right: 8px; top: 8px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: color-mix(in srgb, var(--surface) 92%, transparent); display: grid; place-items: center; cursor: pointer; color: var(--fg); z-index: 2; }
+.fav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.fav[aria-pressed="true"] { color: var(--accent); }
+.fav[aria-pressed="true"] svg { fill: currentColor; }
+.card .body { display: grid; gap: 3px; padding: 0 2px; }
+.card .meta { color: var(--faint); font-size: 12.5px; }
+.card h4 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.4; letter-spacing: -0.015em; }
+.card h4 button { all: unset; cursor: pointer; }
+.card h4 button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.card .line { font-size: 13.5px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card .empty { font-size: 12.5px; color: var(--faint); font-style: italic; }
+.card .foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 4px; font-size: 12.5px; }
+.card .price { font-family: var(--f-mono); color: var(--fg); }
+.card .rate { color: var(--fg); font-family: var(--f-mono); }
+.card .rate::before { content: "★ "; color: var(--accent); }
+
+/* 꿀팁 */
+.tip { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 20px; display: grid; gap: 10px; align-content: start; cursor: pointer; text-align: left; min-width: 0; }
+.tip:hover { border-color: var(--line-2); box-shadow: var(--shadow); }
+.tip .k { font-family: var(--f-mono); font-size: 12px; color: var(--accent); }
+.tip h4 { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 18px; line-height: 1.4; letter-spacing: -0.02em; }
+.tip p { margin: 0; font-size: 13px; color: var(--faint); }
+
+/* 전체 목록 */
+.tabs { display: flex; gap: 24px; margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; }
+.tab { border: 0; background: none; padding: 6px 0; font-size: 15px; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; color: var(--faint); }
+.tab .mono { font-size: 12px; margin-left: 2px; }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--fg); font-weight: 600; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 24px; }
+.filters select { font-size: 14px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 7px 10px; }
+.filters .count { margin-left: auto; color: var(--faint); font-size: 12.5px; font-family: var(--f-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 32px 20px; }
+.none { grid-column: 1 / -1; padding: 48px 16px; text-align: center; color: var(--muted); border: 1px dashed var(--line-2); border-radius: 12px; }
+
+/* 상세 */
+.sheet { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(14,14,12,.5); }
+.panel { position: relative; background: var(--surface); border-radius: 16px; width: min(660px, 100%); max-height: 100%; overflow: auto; box-shadow: var(--shadow); overscroll-behavior: contain; }
+.panel.wide { width: min(920px, 100%); }
+.panel > .thumb { aspect-ratio: 16 / 6; border-radius: 0; }
+.panel .inner { padding: 22px 26px 28px; display: grid; gap: 18px; }
+.panel h2 { font-family: var(--f-display); font-weight: 700; font-size: 28px; margin: 4px 0 0; line-height: 1.25; letter-spacing: -0.03em; }
+.panel .intro { margin: 0; font-size: 15px; }
+.panel dl { margin: 0; display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 10px 14px; font-size: 14px; padding-top: 16px; border-top: 1px solid var(--line); }
+.panel dt { color: var(--faint); }
+.panel dd { margin: 0; overflow-wrap: anywhere; }
+.panel .todo { background: var(--sunk); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--muted); }
+.panel .todo b { color: var(--fg); font-weight: 600; }
+.acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; border: 1px solid var(--line-2); background: var(--surface); padding: 9px 14px; border-radius: 8px; font-weight: 500; font-size: 14px; cursor: pointer; }
+.btn:hover { border-color: var(--fg); }
+.btn.primary { background: var(--ink); color: var(--ink-fg); border-color: var(--ink); }
+.btn.sm { padding: 5px 10px; font-size: 12.5px; }
+.btn.danger { color: var(--accent); }
+.btn[disabled] { opacity: .5; cursor: default; }
+.close { position: sticky; top: 12px; float: right; margin: 12px 12px -48px 0; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--surface); box-shadow: var(--shadow); cursor: pointer; z-index: 3; font-size: 16px; }
+
+/* 리뷰 */
+.reviews { border-top: 1px solid var(--line); padding-top: 20px; display: grid; gap: 16px; }
+.reviews > header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.reviews h3 { font-family: var(--f-display); font-size: 20px; margin: 0; letter-spacing: -0.02em; }
+.avg { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+.avg b { color: var(--fg); font-weight: 500; font-size: 15px; }
+.stars { color: var(--accent); letter-spacing: 1px; }
+.stars .o { color: var(--line-2); }
+.rv { display: grid; gap: 8px; padding: 14px 0; border-top: 1px solid var(--line); }
+.rv:first-child { border-top: 0; padding-top: 0; }
+.rv .who { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 13px; color: var(--faint); }
+.rv .who b { color: var(--fg); font-weight: 600; font-size: 14px; }
+.rv p { margin: 0; font-size: 14.5px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.rv .photos { display: flex; gap: 8px; flex-wrap: wrap; }
+.rv .photos a { display: block; width: 92px; height: 92px; border-radius: 8px; overflow: hidden; background: var(--sunk); }
+.rv .photos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rv .photos .gone { display: grid; place-items: center; font-size: 11px; color: var(--faint); text-align: center; padding: 6px; height: 100%; }
+.rv .tools { display: flex; gap: 6px; flex-wrap: wrap; }
+.rv.masked p, .rv.masked .photos { opacity: .45; }
+.flag { font-size: 11.5px; font-family: var(--f-mono); color: var(--accent); background: var(--accent-soft); padding: 1px 7px; border-radius: 4px; }
+.notice { font-size: 13px; color: var(--muted); background: var(--sunk); border-radius: 10px; padding: 12px 14px; }
+.form { display: grid; gap: 12px; background: var(--sunk); border-radius: 12px; padding: 16px; }
+.form h4 { margin: 0; font-size: 15px; font-weight: 600; }
+.rate-in { display: flex; gap: 2px; }
+.rate-in button { border: 0; background: none; font-size: 26px; line-height: 1; cursor: pointer; color: var(--line-2); padding: 2px; }
+.rate-in button.on { color: var(--accent); }
+.form textarea, .form input[type=text] { width: 100%; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 10px 12px; font-size: 14.5px; }
+.form textarea { min-height: 96px; resize: vertical; }
+.form .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.form .hint { font-size: 12.5px; color: var(--faint); }
+.form .err { font-size: 13px; color: var(--accent); }
+.previews { display: flex; gap: 8px; flex-wrap: wrap; }
+.previews span { position: relative; width: 72px; height: 72px; border-radius: 8px; overflow: hidden; }
+.previews img { width: 100%; height: 100%; object-fit: cover; }
+.previews button { position: absolute; right: 2px; top: 2px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font-size: 12px; cursor: pointer; }
+.file { position: relative; overflow: hidden; }
+.file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+/* 관리 */
+.adm-top { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.adm-top select, .form select { font-size: 14px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 7px 10px; }
+.adm-top .count { margin-left: auto; font-family: var(--f-mono); font-size: 12.5px; color: var(--faint); }
+.adm-list { display: grid; }
+.adm-list .rv { grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px 16px; }
+.adm-list .rv .tools { flex-direction: column; }
+.adm-list .item { font-size: 13px; color: var(--ink); font-weight: 600; }
+
+footer { border-top: 1px solid var(--line); color: var(--faint); font-size: 13px; }
+footer .wrap { padding-block: 32px 40px; display: grid; gap: 6px; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 36px 32px; }
+  .band { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 24px; }
+  .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rail { grid-auto-columns: minmax(240px, 42%); }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
+  .tile .pic { aspect-ratio: 4 / 3; }
+  .band ol { grid-template-columns: minmax(0, 1fr); }
+  .logo small { display: none; }
+  .nav a, .nav button { padding: 6px 8px; font-size: 13px; }
+  .rail { grid-auto-columns: 76%; }
+  .panel .inner { padding: 18px 18px 24px; }
+  .adm-list .rv { grid-template-columns: minmax(0, 1fr); }
+  .adm-list .rv .tools { flex-direction: row; }
+  .top .wrap { gap: 10px; }
+  .nav .m-hide { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="교통대 꿀팁 가이드 처음으로">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="15" r="9.5" style="fill:none;stroke:var(--ink);stroke-width:1.8"/><path d="M13 5.5c0-2.6 1.8-4.2 4.4-4.2 0 2.6-1.8 4.2-4.4 4.2z" style="fill:var(--accent)"/><path d="M9 15.5l2.8 2.8L17.5 12" style="fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg>
+      <b>교통대 꿀팁</b><small>CHUNGJU</small>
+    </a>
+    <nav class="nav" aria-label="바로가기">
+      <a href="#list" data-go="food">맛집</a>
+      <a href="#list" data-go="cafe">카페</a>
+      <a href="#list" data-go="place">숨은 장소</a>
+      <a href="#tips" class="m-hide">꿀팁</a>
+      <a href="#list" data-go="fav" class="favlink" aria-label="찜한 곳"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" style="fill:var(--accent)"/></svg><b id="favCount">0</b></a>
+      <button type="button" class="admin" id="adminBtn" hidden>리뷰 관리 <i id="adminBadge" hidden>0</i></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="kicker">한국교통대학교 충주캠퍼스 · 신입생 가이드</div>
+        <h1>오늘은 어디 가볼까요?</h1>
+        <p class="lede">선배들이 직접 다녀와서 남긴 학교 앞 맛집, 카페, 캠퍼스 숨은 장소를 한곳에 모았어요.</p>
+        <form class="search" id="searchForm" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" style="fill:none;stroke:currentColor;stroke-width:2"/><path d="M20 20l-4-4" style="stroke:currentColor;stroke-width:2;stroke-linecap:round"/></svg>
+          <input id="q" type="search" placeholder="가게 이름, 메뉴, 장소 (예: 순대국, 도서관)" aria-label="검색어" autocomplete="off">
+          <button type="submit">검색</button>
+        </form>
+        <div class="chips" id="quick" aria-label="빠른 찾기"></div>
+      </div>
+      <aside class="live" aria-labelledby="h-live">
+        <header><h2 id="h-live">지금 열려 있는 곳</h2><span class="clock" id="clock"></span></header>
+        <ul id="liveList"></ul>
+        <button class="more" type="button" id="liveMore">영업 중인 곳 모두 보기 →</button>
+      </aside>
+    </section>
+
+    <section class="band" aria-label="신입생 첫 주 안내">
+      <div>
+        <div class="kicker">First week</div>
+        <h2>신입생이라면 첫 주에 이것부터</h2>
+        <button class="cta" type="button" id="bannerCta">학교 안 장소 모두 보기</button>
+      </div>
+      <ol id="bannerList"></ol>
+    </section>
+
+    <section class="block" aria-labelledby="h-tiles">
+      <div class="head"><div><div class="kicker">01</div><h3 id="h-tiles">관심사로 찾아보기</h3></div></div>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section class="block" id="tips" aria-labelledby="h-tips">
+      <div class="head"><div><div class="kicker">02</div><h3 id="h-tips">알면 바로 써먹는 꿀팁</h3><p>선배들 기록에서 골라낸 정보</p></div><div class="arrows" data-rail="tipRail"></div></div>
+      <div class="rail" id="tipRail"></div>
+    </section>
+
+    <section class="block" aria-labelledby="h-cheap">
+      <div class="head"><div><div class="kicker">03</div><h3 id="h-cheap">8,000원 이하로 한 끼</h3><p>가장 싼 식사 메뉴 기준</p></div><div class="arrows" data-rail="cheapRail"></div></div>
+      <div class="rail" id="cheapRail"></div>
+    </section>
+
+    <section class="block" aria-labelledby="h-free">
+      <div class="head"><div><div class="kicker">04</div><h3 id="h-free">공강 때 갈 곳</h3><p>학교 안에서 쉬거나 공부하기 좋은 곳</p></div><div class="arrows" data-rail="freeRail"></div></div>
+      <div class="rail" id="freeRail"></div>
+    </section>
+
+    <section class="block" aria-labelledby="h-out">
+      <div class="head"><div><div class="kicker">05</div><h3 id="h-out">학교 밖으로 한 걸음</h3><p>산책, 러닝, 야경, 벚꽃 명소</p></div><div class="arrows" data-rail="outRail"></div></div>
+      <div class="rail" id="outRail"></div>
+    </section>
+
+    <section class="block" id="list" aria-labelledby="h-list">
+      <div class="head"><div><div class="kicker">06</div><h3 id="h-list">전체 목록</h3><p id="listSub">카드를 누르면 자세한 정보와 리뷰가 나와요</p></div></div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="filters" id="filters">
+        <select id="fCat" aria-label="분류"></select>
+        <select id="fArea" aria-label="위치"></select>
+        <select id="fSort" aria-label="정렬">
+          <option value="info">정보 많은 순</option>
+          <option value="review">리뷰 많은 순</option>
+          <option value="name">이름순</option>
+          <option value="price">가격 낮은 순</option>
+        </select>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>교통대 꿀팁 가이드 · 한국교통대학교 충주캠퍼스 학생들이 직접 모은 기록을 정리했습니다.</div>
+    <div>일부 전화번호·영업시간·메뉴 가격은 다이닝코드(2026-10-13 확인)에서 보완했습니다. "영업 중" 표시는 기록된 영업시간으로 계산한 것이라 실제와 다를 수 있어요. 방문 전 지도 앱으로 한 번 더 확인하세요.</div>
+    <div>찜 목록은 이 기기(로그인 시 내 계정)에만 저장되고, 리뷰는 이 페이지를 보는 모든 사람에게 보입니다.</div>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="dName" id="panel"></div>
+</div>
+
+<script>
+const ITEMS = [{"id":"food0","kind":"food","name":"24시전주명가콩나물국밥","cat":"국밥·탕","area":"충주 시내","loc":"충북 충주시 계명대로 24","map":"https://naver.me/x3j434F6","tel":"043-856-7723","hours":"24시간","off":"연중무휴","price":"5,500-16,000원","group":null,"perk":null,"menu":"콩나물국밥","how":"교통대에서 차로 11분","intro":null,"ref":"https://www.diningcode.com/profile.php?rid=pUmRLJU2ywlV","date":"2026-04-26","pmin":5500,"oh":{"w":[[0,1440],[0,1440],[0,1440],[0,1440],[0,1440],[0,1440],[0,1440]],"brk":null,"offKnown":true}},{"id":"food1","kind":"food","name":"교통대대패삼겹살 교통대본점","cat":"고기·구이","area":null,"loc":null,"map":null,"tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":null,"pmin":null},{"id":"food2","kind":"food","name":"권짬뽕 충주교통대점","cat":"중식","area":"대학로","loc":"충북 충주시 대소원면 대학촌1길 3 1층","map":"https://naver.me/xQJ4dr9R","tel":null,"hours":"11:00-21:00 (브레이크 15:00-16:30)","off":"일요일","price":null,"group":null,"perk":null,"menu":"해물짬뽕, 육짬뽕, 알짬뽕, 백짬뽕","how":null,"intro":"교통대 정문 근처 짬뽕 전문 중식당. 해물·육·알·백짬뽕 등 선택지가 다양하고 국물이 진하다.","ref":"https://www.welfarehello.com/community/hometownNews/2ddddf97-21e6-4113-a50e-89881a23d683","date":"2026-10-06","pmin":null,"oh":{"w":[null,[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260]],"brk":[900,990],"offKnown":true}},{"id":"food3","kind":"food","name":"꼬보","cat":"양식","area":"충주 시내","loc":"충북 충주시 대가미13길 28 1층","map":"https://map.naver.com/p/entry/place/1027293990","tel":"0507-1426-7441","hours":"11:30-22:00 (브레이크 15:30-17:30)","off":"월요일","price":"9,000-17,000원","group":null,"perk":null,"menu":"치킨난반 14,000원, 매콤 새우 토마토 파스타 17,000원, 트러플 감자튀김 9,000원, 스트라치아텔라 치즈 12,000원","how":null,"intro":null,"ref":"https://www.diningcode.com/profile.php?rid=q7QJTO5pkgD6","date":"2026-10-06","pmin":9000,"oh":{"w":[[690,1320],null,[690,1320],[690,1320],[690,1320],[690,1320],[690,1320]],"brk":[930,1050],"offKnown":true}},{"id":"food4","kind":"food","name":"낮과밤","cat":"술집","area":"충주 시내","loc":"충북 충주시 지현천변1길 55-2","map":"https://map.naver.com/p/entry/place/1353118575","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"매콤크림플레이트 18,900원","how":null,"intro":"야장(약 20석)이 매력인 양식 위주 주점. 저녁에 붐벼 8시쯤 만석이 된다.","ref":null,"date":"2026-10-06","pmin":18900},{"id":"food5","kind":"food","name":"뉴욕버거 충주교통대점","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학촌1길 8 1층","map":"https://naver.me/xeFSVbsB","tel":null,"hours":"10:00-21:00 또는 22:00까지 (기록이 다름)","off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"신선한 수제버거집. 피자도 판다.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food6","kind":"food","name":"달주","cat":null,"area":"대학로","loc":"충북 충주시 대소원면 대학로 19-3","map":"https://naver.me/FSw0F3WZ","tel":null,"hours":null,"off":null,"price":null,"group":"O","perk":null,"menu":null,"how":null,"intro":"과 행사·단체 모임 하기 좋은 곳. 단체는 미리 전화 예약.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food7","kind":"food","name":"대학로 친구분식","cat":"분식","area":"대학로","loc":"충북 충주시 대소원면 대학로 23","map":"https://place.map.kakao.com/15670775","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":null},{"id":"food8","kind":"food","name":"도란도락","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학로 10-6","map":"https://naver.me/FE32chm2","tel":"043-855-7981","hours":"10:30-20:00","off":"일요일","price":"5,700-9,000원","group":null,"perk":null,"menu":"가츠동 5,700원, 콤보 도시락 6,500원, 규동 7,500원, 믹스동 8,500원, 양푼이 비빔밥 9,000원","how":null,"intro":"도시락집. 12-13시에는 주문 후 30분 정도 걸려 점심 전후 방문 추천.","ref":"https://www.diningcode.com/profile.php?rid=wKeeMftC3E7c","date":"2026-10-06","pmin":5700,"oh":{"w":[null,[630,1200],[630,1200],[630,1200],[630,1200],[630,1200],[630,1200]],"brk":null,"offKnown":true}},{"id":"food9","kind":"food","name":"두꺼비네","cat":"국밥·탕","area":"대학로","loc":"충북 충주시 대소원면 대학로 19 1층","map":null,"tel":"043-854-3911","hours":null,"off":null,"price":"9,000-35,000원","group":null,"perk":null,"menu":"순대국 9,000원, 뼈해장국 9,000원, 수육국밥 9,000원, 순대전골(중) 28,000원, 감자탕(중) 28,000원","how":null,"intro":"해장하기 좋은 곳. 넓고 셀프바·와이파이가 있다.","ref":"https://www.diningcode.com/profile.php?rid=mrU9HLXZjAw5","date":"2026-10-06","pmin":9000},{"id":"food10","kind":"food","name":"뚝딱김치찌개삼겹살","cat":"한식","area":"충주 시내","loc":"충북 충주시 금제9길 38","map":"https://naver.me/FtTxTVFr","tel":"0507-1422-6000","hours":"10:30-22:00 (브레이크 14:30-16:30)","off":"일요일","price":"10,000-30,000원","group":null,"perk":null,"menu":"김치찌개, 삼겹살","how":null,"intro":"김치찌개가 맛있고 라면사리·공깃밥이 무한리필이다.","ref":"https://www.diningcode.com/profile.php?rid=Vmeh12YQjSMM","date":"2026-10-06","pmin":10000,"oh":{"w":[null,[630,1320],[630,1320],[630,1320],[630,1320],[630,1320],[630,1320]],"brk":[870,990],"offKnown":true}},{"id":"food11","kind":"food","name":"리밍 교통대점","cat":"중식","area":"대학로","loc":"충북 충주시 대소원면 대학로 12 2층 203호","map":"https://naver.me/FGEdt9Ir","tel":null,"hours":"10:30-24:00, 금 22:00까지 (브레이크 15:00-16:30)","off":"토요일","price":null,"group":null,"perk":null,"menu":"짜장면, 짬뽕, 볶음밥, 탕수육, 칠리새우","how":null,"intro":"메뉴가 다양하고 내부가 넓은 대학로 중식당. 혼밥·친구 모임 모두 좋다.","ref":"https://blog.naver.com/PostView.nhn?blogId=coo5739&logNo=223978226517","date":"2026-10-06","pmin":null,"oh":{"w":[[630,1440],[630,1440],[630,1440],[630,1440],[630,1440],[630,1320],null],"brk":[900,990],"offKnown":true}},{"id":"food12","kind":"food","name":"마라야 교통대점","cat":null,"area":"대학로","loc":"충북 충주시 대소원면 용두제방길 4 1층","map":"https://naver.me/FeNgUQsI","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":null,"pmin":null},{"id":"food13","kind":"food","name":"막국수파는집-한국교통대점","cat":"한식","area":"대학로","loc":"충북 충주시 대소원면 대학로 28","map":"https://naver.me/F2LbN0j5","tel":null,"hours":null,"off":null,"price":"13,900원","group":null,"perk":null,"menu":"막국수 보쌈 도시락 13,900원","how":null,"intro":"막국수 보쌈 도시락(13,900원) 하나로 밥·보쌈·막국수까지 배불리 먹는다.","ref":null,"date":"2026-10-06","pmin":13900},{"id":"food14","kind":"food","name":"막부","cat":"일식","area":"충주 시내","loc":"충북 충주시 봉현로 296 1층","map":"https://naver.me/F4LDKwiH","tel":"0507-1398-5190","hours":"11:00-21:30 (브레이크 15:00-17:00)","off":"일요일","price":"15,000-130,000원","group":null,"perk":null,"menu":"런치/디너 스시 오마카세","how":"교통대에서 차로 13분","intro":null,"ref":"https://www.diningcode.com/profile.php?rid=YwEQXYjYxn1X","date":"2026-09-28","pmin":15000,"oh":{"w":[null,[660,1290],[660,1290],[660,1290],[660,1290],[660,1290],[660,1290]],"brk":[900,1020],"offKnown":true}},{"id":"food15","kind":"food","name":"메밀마당 충주중앙탑본점","cat":"한식","area":"충주 외곽","loc":"충북 충주시 중앙탑면 중앙탑길 103","map":"https://naver.me/FV75JYzM","tel":"043-855-0283 / 0507-1400-0283","hours":"11:00-20:40","off":"없음(매일 영업)","price":"9,000-19,000원","group":null,"perk":null,"menu":"순메밀 후라이드치킨 반 마리 10,000원, 순메밀 후라이드치킨 한 마리 19,000원, 메밀 새싹 물막국수 9,000원, 메밀 새싹 비빔막국수 9,000원","how":null,"intro":"중앙탑공원 근처 메밀막국수집. 막국수+메밀치킨 '치막' 조합 추천, 주말엔 대기.","ref":null,"date":"2026-10-06","pmin":9000,"oh":{"w":[[660,1240],[660,1240],[660,1240],[660,1240],[660,1240],[660,1240],[660,1240]],"brk":null,"offKnown":true}},{"id":"food16","kind":"food","name":"몽돌집","cat":"고기·구이","area":"충주 시내","loc":"충북 충주시 우륵로 22","map":"https://naver.me/FPnG0prc","tel":"043-724-8889","hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"국내산생삼겹살","how":"교통대에서 차로 13분","intro":null,"ref":null,"date":"2026-10-01","pmin":null},{"id":"food17","kind":"food","name":"미미분식","cat":"분식","area":"대학로","loc":"충북 충주시 대소원면 대학로 19","map":"https://naver.me/xAf7hzHy","tel":null,"hours":null,"off":null,"price":"3,000-6,000원","group":null,"perk":null,"menu":"떡볶이 3,000원대, 라면·튀김류 4,000-6,000원대","how":null,"intro":"3천 원대 떡볶이부터 있는 저렴한 대학로 분식집. 수업 사이 빠른 식사에 좋다.","ref":"https://www.diningcode.com/profile.php?rid=yATEFtzP92dC","date":"2026-10-06","pmin":3000},{"id":"food18","kind":"food","name":"밍거스 바베큐","cat":"양식","area":"충주 시내","loc":"충북 충주시 사천개로 40 이노스퀘어빌딩 2층","map":"https://naver.me/FV7YuLNq","tel":null,"hours":"17:00-22:00","off":"일요일","price":"13,000-43,000원","group":null,"perk":null,"menu":"타코 13,000원, 1인 바베큐 16,000-23,000원, 밍거스 플레이트 41,000원, 베이비 백 립 플레이트 43,000원, 파히타 42,000원","how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":13000,"oh":{"w":[null,[1020,1320],[1020,1320],[1020,1320],[1020,1320],[1020,1320],[1020,1320]],"brk":null,"offKnown":true}},{"id":"food19","kind":"food","name":"배가네국수","cat":"한식","area":"대학로","loc":"충북 충주시 대소원면 대학로 8","map":"https://naver.me/FaOjexru","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":"교통대 학생은 곱빼기 무료","menu":null,"how":null,"intro":"싸고 양 많은 국수집. 교통대 학생은 곱빼기 무료.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food20","kind":"food","name":"보스찜닭","cat":"한식","area":"대학로","loc":"충북 충주시 대소원면 대학로 21","map":"https://naver.me/GuCjAZhA","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"양이 많은 찜닭집.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food21","kind":"food","name":"봉구스밥버거 교통대점","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학로 18","map":"https://map.naver.com/p/entry/place/32874983","tel":"0507-1409-0956","hours":"09:00-21:00, 금 19:00까지, 일 11:00부터","off":"토요일","price":"3,500-7,000원","group":null,"perk":null,"menu":"봉구스밥버거 3,500원, 고기·치즈 메뉴 4,000-7,000원대","how":null,"intro":"3,500원부터 있는 밥버거. 바로 포장돼 쉬는 시간이 짧을 때 좋다.","ref":"https://www.diningcode.com/profile.php?rid=UaStVc29WkTQ","date":"2026-10-07","pmin":3500,"oh":{"w":[[660,1260],[540,1260],[540,1260],[540,1260],[540,1260],[540,1140],null],"brk":null,"offKnown":true}},{"id":"food22","kind":"food","name":"봉방돈까스","cat":"양식","area":"충주 시내","loc":"충북 충주시 봉방3길 34-1","map":"https://map.naver.com/p/entry/place/1869525189","tel":null,"hours":null,"off":null,"price":"평균 13,000원","group":null,"perk":null,"menu":null,"how":"차가 있으면 편하게 이동할 수 있음","intro":"셀프바 수프가 맛있는 경양식 돈까스집. 매운 돈까스는 꽤 맵다.","ref":null,"date":"2026-10-06","pmin":13000},{"id":"food23","kind":"food","name":"부리또인 충주교통대점","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학로 13","map":"https://naver.me/xKEb82t9","tel":"043-848-6980","hours":"10:30-21:00","off":"토요일","price":null,"group":"X","perk":null,"menu":"부리또 4,500원","how":null,"intro":"가볍고 저렴한 부리또 한 끼. 매장이 좁고 점심엔 20-40분 대기.","ref":"https://www.diningcode.com/profile.php?rid=YRgvWTh9v6Jx","date":"2026-10-07","pmin":4500,"oh":{"w":[[630,1260],[630,1260],[630,1260],[630,1260],[630,1260],[630,1260],null],"brk":null,"offKnown":true}},{"id":"food24","kind":"food","name":"사천마라탕교통대점","cat":"아시안","area":"대학로","loc":"충북 충주시 대소원면 대학로 18 102호","map":"https://map.naver.com/p/entry/place/1229501354","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"재료를 담아 무게로 계산하는 마라탕집. 1인 주문, 중국어 주문 가능.","ref":null,"date":"2026-10-07","pmin":null},{"id":"food25","kind":"food","name":"새마을 삼겹살","cat":"고기·구이","area":"대학로","loc":"충북 충주시 대소원면 대학로 12","map":"https://map.naver.com/p/entry/place/1973130023","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"대학로에서 삼겹살 먹고 싶을 때 가는 곳.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food26","kind":"food","name":"샌치","cat":"아시안","area":"대학로","loc":"충북 충주시 대소원면 대학로 19-10 1층","map":"https://naver.me/G8hLweAu","tel":"010-7723-2301","hours":"10:00-21:00","off":"없음(매일 영업)","price":null,"group":null,"perk":null,"menu":"우삼겹포케 9,500원","how":null,"intro":"대학로 유일한 포케집.","ref":"https://www.diningcode.com/profile.php?rid=ubhecu6TyMDv","date":"2026-10-06","pmin":9500,"oh":{"w":[[600,1260],[600,1260],[600,1260],[600,1260],[600,1260],[600,1260],[600,1260]],"brk":null,"offKnown":true}},{"id":"food27","kind":"food","name":"생각나는감자탕","cat":"국밥·탕","area":"대학로","loc":"충북 충주시 대소원면 대학로 11","map":"https://map.naver.com/p/entry/place/21755270","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"뼈해장국","how":null,"intro":"맵지 않고 양 많은 뼈해장국이 메인인 감자탕집.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food28","kind":"food","name":"성대분식","cat":"분식","area":"대소원면","loc":"충북 충주시 대소원면 요도천변길 220-7","map":"https://naver.me/FfsYd6yg","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"삼겹살비빔밥 8,900원","how":null,"intro":"가성비 좋은 삼겹살비빔밥(8,900원). 배달이 빠르다.","ref":"https://www.diningcode.com/profile.php?rid=fY1bulT6CJQ9","date":"2026-10-06","pmin":8900},{"id":"food29","kind":"food","name":"성마루 국밥","cat":"국밥·탕","area":"대소원면","loc":"충북 충주시 대소원면 성종두담길 315","map":"https://naver.me/x8tNhL9d","tel":null,"hours":"08:30-20:30","off":"매일 영업, 가끔 비정기 휴무","price":"9,000-15,000원","group":null,"perk":null,"menu":"우렁제육쌈밥","how":null,"intro":"우렁제육쌈밥이 맛있고 우렁된장 무한리필. 점심엔 대기 포함 40분.","ref":null,"date":"2026-10-06","pmin":9000,"oh":{"w":[[510,1230],[510,1230],[510,1230],[510,1230],[510,1230],[510,1230],[510,1230]],"brk":null,"offKnown":true}},{"id":"food30","kind":"food","name":"소소, 단월","cat":null,"area":"충주 시내","loc":"충북 충주시 충열5길 12 1층","map":"https://naver.me/x2cKXYyf","tel":null,"hours":"새벽 1:00까지","off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"건대 앞 가게지만 교통대까지 배달, 새벽 1시까지 영업.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food31","kind":"food","name":"속초실비집","cat":"술집","area":"충주 시내","loc":"충북 충주시 갱고개로 59","map":"https://naver.me/GI3eyvrS","tel":"043-843-2919","hours":"18:00-24:00","off":null,"price":"8,000-15,000원","group":null,"perk":null,"menu":"소주 3,000원","how":null,"intro":"소주 3,000원, 안주 종류가 많고 양이 푸짐한 술집.","ref":"https://www.diningcode.com/profile.php?rid=YQQuc46hz0QN","date":"2026-10-06","pmin":null,"oh":{"w":[[1080,1440],[1080,1440],[1080,1440],[1080,1440],[1080,1440],[1080,1440],[1080,1440]],"brk":null,"offKnown":false}},{"id":"food32","kind":"food","name":"쇼쿠스시 충주호암점","cat":"일식","area":"충주 시내","loc":"충북 충주시 호암토성4길 3 노브랜드 3층","map":"https://naver.me/5T4CgY07","tel":"043-853-2003","hours":"11:30-21:30","off":"연중무휴","price":"14,000-22,000원(세트 기준, 회전초밥 한 접시 1,990원)","group":null,"perk":null,"menu":"회전초밥 한 접시 1,990원, 모듬세트10p 14,000원, 특 모듬세트16p 22,000원, 평일 점심 특선 16,000원, 사시미 한상 65,000-110,000원","how":"교통대에서 700번 타고 풍경채에서 내린 후 도보","intro":"한 접시 1,990원, 충주 회전초밥 중 가성비 최고. 식사 시간엔 대기.","ref":"https://www.diningcode.com/profile.php?rid=1H5YwodeQ4mo","date":"2026-10-06","pmin":14000,"oh":{"w":[[690,1290],[690,1290],[690,1290],[690,1290],[690,1290],[690,1290],[690,1290]],"brk":null,"offKnown":true}},{"id":"food33","kind":"food","name":"수리또 대소원점","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학로 9","map":"https://naver.me/GahRhZGP","tel":null,"hours":null,"off":null,"price":"6,300-8,500원","group":null,"perk":null,"menu":"믹스부리또 6,500원, 김치소고기부리또 7,200원, 새우부리또 8,500원, 세트 추가 3,000원","how":null,"intro":"대학로에 있어 가기 쉬운 부리또집.","ref":null,"date":"2026-10-06","pmin":6300},{"id":"food34","kind":"food","name":"스매쉬크루","cat":"간편식","area":"충주 시내","loc":"충북 충주시 용정2길 40","map":"https://naver.me/GO6z8s6l","tel":null,"hours":"11:00-20:00","off":null,"price":"5,500-9,000원","group":null,"perk":null,"menu":"스매쉬 싱글 치즈버거 5,500원, 스매쉬 싱글버거 SET 9,000원, 칠리프라이 7,500원, 사이드세트 5,500원","how":null,"intro":"미국 LA 버거 맛에 가장 가깝다는 스매쉬 버거집.","ref":null,"date":"2026-10-06","pmin":5500,"oh":{"w":[[660,1200],[660,1200],[660,1200],[660,1200],[660,1200],[660,1200],[660,1200]],"brk":null,"offKnown":false}},{"id":"food35","kind":"food","name":"슬기로운대학생활","cat":"술집","area":"대학로","loc":"충북 충주시 대소원면 대학로 25","map":"https://naver.me/50JBNrJR","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"대학로에서 늘 사람이 많은 대표 술집. 신입생 추천.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food36","kind":"food","name":"신전떡볶이 충주교통대점","cat":"분식","area":"대학로","loc":"충북 충주시 대소원면 대학로 21 2호","map":"https://map.naver.com/p/entry/place/37656960","tel":null,"hours":"11:00-23:00","off":"없음(매일 영업)","price":"4,000-6,000원","group":null,"perk":null,"menu":"떡볶이 4,000원, 치즈떡볶이 6,000원, 튀김(오뎅튀김·만두튀김 5개, 김말이튀김 3개) 1,700원","how":null,"intro":"맵기를 고를 수 있는 떡볶이집. 밤 11시까지 영업.","ref":null,"date":"2026-10-07","pmin":4000,"oh":{"w":[[660,1380],[660,1380],[660,1380],[660,1380],[660,1380],[660,1380],[660,1380]],"brk":null,"offKnown":true}},{"id":"food37","kind":"food","name":"심향","cat":"일식","area":"충주 시내","loc":"충북 충주시 관아1길 17","map":"https://map.naver.com/p/entry/place/37081756","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":null},{"id":"food38","kind":"food","name":"엄정분식","cat":"분식","area":"충주 시내","loc":"충북 충주시 충인6길 37-1","map":"https://naver.me/FtTdJwWL","tel":"043-844-6931","hours":null,"off":null,"price":"5,000-25,000원","group":null,"perk":null,"menu":"칼국수 5,000원, 국밥 6,000원, 머리고기 10,000원, 막창구이 20,000원, 곱창전골 25,000원","how":null,"intro":"술을 안 마시면 불친절할 수도 있다는 후기가 있다.","ref":"https://www.diningcode.com/profile.php?rid=pHKXCxMP3b52","date":"2026-10-06","pmin":5000},{"id":"food39","kind":"food","name":"예반72","cat":"일식","area":"충주 시내","loc":"충북 충주시 관아5길 6","map":"https://map.naver.com/p/entry/place/1019680026","tel":"0507-1320-4728","hours":"화-금 11:00-20:00 (브레이크 15:00-17:00), 토·일 11:00-15:00","off":"월요일","price":"11,000-14,000원","group":null,"perk":null,"menu":"로스카츠 11,000원, 가츠동 11,000원, 히레카츠 12,000원, 치즈카츠 12,000원, 모듬카츠 14,000원","how":null,"intro":null,"ref":"https://www.diningcode.com/profile.php?rid=ZA5P4gtg7iwc","date":"2026-10-06","pmin":11000,"oh":{"w":[[660,900],null,[660,1200],[660,1200],[660,1200],[660,1200],[660,900]],"brk":[900,1020],"offKnown":true}},{"id":"food40","kind":"food","name":"옛날순대","cat":"국밥·탕","area":"대소원면","loc":"충북 충주시 대소원면 중원대로 4104","map":"https://naver.me/GBFzFynw","tel":"043-853-3344","hours":"07:00-22:00","off":"없음(매일 영업)","price":"7,000원부터","group":null,"perk":null,"menu":"순대국밥 7,000원, 돼지머리국밥 7,000원, 불고기뚝배기 7,000원","how":null,"intro":"7,000원에 고기가 푸짐한 순대국밥.","ref":"https://www.diningcode.com/profile.php?rid=ON9LNnJEDnNV","date":"2026-10-06","pmin":7000,"oh":{"w":[[420,1320],[420,1320],[420,1320],[420,1320],[420,1320],[420,1320],[420,1320]],"brk":null,"offKnown":true}},{"id":"food41","kind":"food","name":"오뚜기분식","cat":"분식","area":"충주 시내","loc":"충북 충주시 자유시장길 31 1층","map":"https://naver.me/xBwJ0Zsz","tel":"043-844-3461","hours":"10:30-20:00","off":"일요일","price":"4,000-7,000원","group":null,"perk":null,"menu":"쫄면, 떡볶이, 김밥","how":null,"intro":"쫄면이 대표인 정통 분식집. 쫄면·김밥·떡볶이 둘이 16,000원 정도.","ref":"https://www.diningcode.com/profile.php?rid=wS6zbBT6F2Jc","date":"2026-10-06","pmin":4000,"oh":{"w":[null,[630,1200],[630,1200],[630,1200],[630,1200],[630,1200],[630,1200]],"brk":null,"offKnown":true}},{"id":"food42","kind":"food","name":"오복쌈밥","cat":"한식","area":"충주 시내","loc":"충북 충주시 사직로 191-3","map":"https://map.naver.com/p/entry/place/17503896","tel":"043-842-9710","hours":"11:00-21:00 (브레이크 15:00-17:00)","off":"토요일","price":"7,000-10,000원","group":null,"perk":null,"menu":"제육쌈밥 10,000원대, 우렁이쌈밥 10,000원대","how":"교통대에서 멀리 충주 시내까지 가야 함","intro":"시내까지 가야 하지만 평이 좋은 쌈밥집. 쌈밥 1만 원대.","ref":"https://www.diningcode.com/profile.php?rid=j6onmqFEHkqR","date":"2026-10-06","pmin":10000,"oh":{"w":[[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],null],"brk":[900,1020],"offKnown":true}},{"id":"food43","kind":"food","name":"옹심촌 감자옹심이 전문점","cat":"한식","area":"충주 외곽","loc":"충북 충주시 주덕읍 신덕로 1383 1층 3~5호","map":"https://naver.me/FSSDyWTi","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-09-16","pmin":null},{"id":"food44","kind":"food","name":"우동키노야 충주호암점","cat":"일식","area":"충주 시내","loc":"충북 충주시 호암수청2로 10 1층 115호","map":"https://naver.me/FSvS2TUh","tel":"0507-1312-7286","hours":"11:00-21:00 (브레이크 15:00-17:00)","off":"없음(매일 영업)","price":"9,000-16,900원","group":null,"perk":null,"menu":"키노야 카케우동 9,000원, 카레우동 11,500원, 토리텐 카케우동 13,000원, 30cm통장어튀김 붓카케우동 16,900원, 돈카츠 12,900원","how":null,"intro":"우동·소바·돈까스 종류가 다양하고 1인석이 있다.","ref":"https://www.diningcode.com/profile.php?rid=EKC7m9ijHFtP","date":"2026-10-06","pmin":9000,"oh":{"w":[[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260]],"brk":[900,1020],"offKnown":true}},{"id":"food45","kind":"food","name":"원조중원탑막국수","cat":"한식","area":null,"loc":"충북 충주시 중원대로 3018","map":null,"tel":"043-848-5508","hours":"10:30-20:00","off":null,"price":"7,000-22,000원","group":"O","perk":null,"menu":"메밀새싹 물막국수 10,000원, 메밀새싹 비빔막국수 11,000원, 메밀 왕만두 7,000원, 수육(중) 22,000원","how":null,"intro":"가족외식·식사모임에 좋은 막국수집. 셀프바, 무료 주차.","ref":"https://www.diningcode.com/profile.php?rid=B5XOWmrBU5JD","date":"2026-10-06","pmin":10000,"oh":{"w":[[630,1200],[630,1200],[630,1200],[630,1200],[630,1200],[630,1200],[630,1200]],"brk":null,"offKnown":false}},{"id":"food46","kind":"food","name":"윤박사한식삼겹살","cat":"고기·구이","area":"대학로","loc":"충북 충주시 대소원면 대학로 12","map":"https://map.naver.com/p/search/윤박사한식삼겹살","tel":null,"hours":"08:30-22:00","off":null,"price":null,"group":null,"perk":null,"menu":"삼겹살, 탕수육","how":null,"intro":"대학로 삼겹살 식당. 탕수육도 함께 찾는 메뉴, 재방문 후기가 많다.","ref":"https://blog.naver.com/98_yeun/224390686178","date":"2026-10-06","pmin":null,"oh":{"w":[[510,1320],[510,1320],[510,1320],[510,1320],[510,1320],[510,1320],[510,1320]],"brk":null,"offKnown":false}},{"id":"food47","kind":"food","name":"이씨식당 충주점","cat":"한식","area":"충주 시내","loc":"충북 충주시 능바우길 15","map":"https://naver.me/xa5R7ek6","tel":"043-848-6066","hours":"11:00-21:00","off":"없음(명절 당일만 휴무)","price":"10,000-36,000원","group":null,"perk":null,"menu":"화이트 함박스테이크 10,000원, 베이컨까르보나라 11,000원, 직화쭈꾸미세트(2인) 30,000원, 직화쭈삼겹세트(2인) 32,000원","how":null,"intro":"주차장은 있지만 공간이 좁다.","ref":"https://www.diningcode.com/profile.php?rid=tqrdl1zyhBjI","date":"2026-10-06","pmin":10000,"oh":{"w":[[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],[660,1260]],"brk":null,"offKnown":true}},{"id":"food48","kind":"food","name":"이정동묵밥","cat":"한식","area":"충주 시내","loc":"충북 충주시 쇠저울1길 13-2","map":"https://map.naver.com/p/entry/place/1058887404","tel":"0507-1347-4525","hours":"10:00-20:00 (브레이크 14:30-17:00)","off":"화요일","price":"평균 12,000원대","group":null,"perk":null,"menu":"짬뽕묵밥, 냉채묵밥, 전통묵밥, 도토리전, 간장묵","how":null,"intro":"짬뽕·냉채·전통묵밥 3종 묵밥집. 평균 12,000원대로 가격대가 있는 편.","ref":"https://www.diningcode.com/profile.php?rid=UGMu2HqDNt8F","date":"2026-10-06","pmin":12000,"oh":{"w":[[600,1200],[600,1200],null,[600,1200],[600,1200],[600,1200],[600,1200]],"brk":[870,1020],"offKnown":true}},{"id":"food49","kind":"food","name":"일미닭갈비 교통대점","cat":"한식","area":"대학로","loc":"충북 충주시 대소원면 대학로 6","map":"https://naver.me/xPURzzQt","tel":"043-853-3212","hours":"평일 11:00-21:00 (브레이크 15:00-17:00)","off":null,"price":null,"group":null,"perk":null,"menu":"철판 닭갈비, 파전","how":null,"intro":"저렴하고 가성비 좋은 철판 닭갈비집. 셀프바, 칸막이 있음.","ref":"https://blog.naver.com/k_sungjun-/223393768353","date":"2026-10-06","pmin":null,"oh":{"w":["u",[660,1260],[660,1260],[660,1260],[660,1260],[660,1260],"u"],"brk":[900,1020],"offKnown":false}},{"id":"food50","kind":"food","name":"일번지순대국","cat":"국밥·탕","area":"충주 시내","loc":"충북 충주시 연수상가2길 9","map":"https://naver.me/FsRseC0s","tel":"0507-1326-4334","hours":"10:10-21:00 (브레이크 14:50-17:00)","off":null,"price":"9,000-11,000원","group":null,"perk":null,"menu":"순대국밥 9,000원, 순대국밥(대) 11,000원","how":null,"intro":"우거지(시래기)가 들어가 느끼하지 않은 순대국. 저녁엔 10-30분 대기, 캐치테이블 가능.","ref":"https://www.diningcode.com/profile.php?rid=OoRa4h2zcxxC","date":"2026-10-06","pmin":9000,"oh":{"w":[[610,1260],[610,1260],[610,1260],[610,1260],[610,1260],[610,1260],[610,1260]],"brk":[890,1020],"offKnown":false}},{"id":"food51","kind":"food","name":"제갈덮밥&곱창마니 한국교통대점","cat":"한식","area":"대학로","loc":"충북 충주시 대소원면 대학로 25 102호","map":"https://naver.me/FwGHArSe","tel":"0507-1470-2228","hours":"11:00-24:00","off":null,"price":null,"group":null,"perk":null,"menu":"덮밥, 짜글이","how":null,"intro":"덮밥·짜글이 종류가 다양하고 늦게까지 영업. 결제가 간편해 혼밥하기 좋다.","ref":null,"date":"2026-10-07","pmin":null,"oh":{"w":[[660,1440],[660,1440],[660,1440],[660,1440],[660,1440],[660,1440],[660,1440]],"brk":null,"offKnown":false}},{"id":"food52","kind":"food","name":"제주돼지촌","cat":"고기·구이","area":"대소원면","loc":"충북 충주시 대소원면 산정독정길 220","map":"https://map.naver.com/p/entry/place/1620939304","tel":"043-855-4457","hours":null,"off":null,"price":"7,000-20,000원","group":null,"perk":null,"menu":"삼겹살, 막창, 곱창","how":"학교에서 걸어서 이동 가능","intro":"학교에서 걸어갈 수 있는 고깃집. 삼겹살·막창·곱창.","ref":"https://www.diningcode.com/profile.php?rid=AJWvnQ1JoLrZ","date":"2026-10-06","pmin":13000},{"id":"food53","kind":"food","name":"중원육면 충주점","cat":"한식","area":"충주 시내","loc":"충북 충주시 호암토성5길 24 1층","map":"https://naver.me/F2ngxUY2","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":"교통대에서 급행1번 타고 힐데스하임아파트에서 내린 후 도보 / 700번 타고 풍경채에서 내린 후 도보","intro":"육회가 신선한 들기름육회비빔밥 추천. 백면은 슴슴하다.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food54","kind":"food","name":"짬뽕생각","cat":"중식","area":"대학로","loc":"충북 충주시 대소원면 대학로 20 1층 101호","map":"https://naver.me/FUiCPE9l","tel":null,"hours":"20:00까지","off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"새로 생긴 넓은 중식집. 면발이 얇고 삶은 정도가 좋다.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food55","kind":"food","name":"차이나김쉐프","cat":"중식","area":"대소원면","loc":"충북 충주시 대소원면 첨단쉼터2길 15","map":"https://naver.me/GOPKXRso","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-09-10","pmin":null},{"id":"food56","kind":"food","name":"촌집돌판삼겹살","cat":"고기·구이","area":"대소원면","loc":"충북 충주시 대소원면 중원대로 4102 1층","map":"https://naver.me/GwpjkcRo","tel":null,"hours":null,"off":null,"price":null,"group":"O","perk":null,"menu":null,"how":null,"intro":"다 구워져 돌판에 나오는 삼겹살집. 학교 직원 회식 장소.","ref":null,"date":"2026-10-06","pmin":null},{"id":"food57","kind":"food","name":"카츠집","cat":"일식","area":"충주 시내","loc":"충북 충주시 연수서편2길 11 상가동 117호","map":"https://map.naver.com/p/entry/place/1875506164","tel":"043-851-0117","hours":"11:00-14:00","off":"월요일, 일요일","price":"평균 11,000원","group":null,"perk":null,"menu":"안심카츠 11,000원, 등심카츠 11,000원, 치즈카츠 11,000원, 특등심카츠 12,000원, 모듬카츠 14,500원","how":"차가 있으면 편하게 이동할 수 있음","intro":"평균 11,000원 카츠집. 점심엔 15-20분 대기.","ref":"https://www.diningcode.com/profile.php?rid=Z8Lik6MHf0F6","date":"2026-10-06","pmin":11000,"oh":{"w":[null,null,[660,840],[660,840],[660,840],[660,840],[660,840]],"brk":null,"offKnown":true}},{"id":"food58","kind":"food","name":"큰집막창 봉방점","cat":"고기·구이","area":"충주 시내","loc":"충북 충주시 봉방9길 2","map":"https://naver.me/GxkgL5fN","tel":"043-845-1140","hours":"16:00-22:00","off":"일요일","price":"13,000-20,000원","group":null,"perk":null,"menu":"돼지생막창 13,000원, 훈제양념곱창 13,000원, 훈제양념막창 15,000원, 뭉티기삼겹살 15,000원, 소막창 20,000원","how":"교통대에서 999 혹은 100번대 버스를 타고 충주역에서 내린 후 도보","intro":"충주 세 지점 중 가장 인기. 금·토 저녁엔 웨이팅 기본.","ref":"https://www.diningcode.com/profile.php?rid=Sw7G19bjH9lD","date":"2026-10-06","pmin":13000,"oh":{"w":[null,[960,1320],[960,1320],[960,1320],[960,1320],[960,1320],[960,1320]],"brk":null,"offKnown":true}},{"id":"food59","kind":"food","name":"큰집아저씨 충주 본점","cat":"한식","area":"대소원면","loc":"충북 충주시 대소원면 중원대로 4102","map":"https://naver.me/FIfGM87n","tel":"0507-1347-6869","hours":"10:00-20:00","off":"연중무휴","price":"5,000-25,000원","group":null,"perk":null,"menu":"육칼국수, 육개장, 육회비빔밥","how":"교통대에서 차로 2분","intro":"KBS·MBC 방송에 나온 육칼국수·육개장·육회비빔밥집.","ref":"https://www.diningcode.com/profile.php?rid=mabLgqjuGG9i","date":"2026-09-08","pmin":11000,"oh":{"w":[[600,1200],[600,1200],[600,1200],[600,1200],[600,1200],[600,1200],[600,1200]],"brk":null,"offKnown":true}},{"id":"food60","kind":"food","name":"탄금반점","cat":"중식","area":"충주 시내","loc":"충북 충주시 탄금대로 296","map":"https://naver.me/5uIRcpew","tel":"043-853-8855","hours":"11:00-15:00 (재료 소진 시 조기 마감)","off":"일요일","price":"7,000-18,000원","group":null,"perk":null,"menu":"짜장면 7,000원, 간짜장 9,000원, 직화고기짬뽕 12,000원, 백짬뽕 13,000원, 탕수육 18,000원","how":null,"intro":"짜장 추천 중식당. 재료 소진으로 일찍 닫고 13시 이후엔 탕수육 품절.","ref":"https://www.diningcode.com/profile.php?rid=nWir3bdz4si1","date":"2026-10-06","pmin":7000,"oh":{"w":[null,[660,900],[660,900],[660,900],[660,900],[660,900],[660,900]],"brk":null,"offKnown":true}},{"id":"food61","kind":"food","name":"태권치킨교통대점","cat":"치킨","area":"대학로","loc":"충북 충주시 대소원면 대학로 12","map":"https://naver.me/xZKpX5Pd","tel":"0507-1371-0724","hours":"17:00-24:00","off":null,"price":null,"group":null,"perk":null,"menu":"나혼자세트2번 17,000원","how":null,"intro":"1인 세트(17,000원)가 가성비 좋은 치킨집.","ref":null,"date":"2026-10-06","pmin":17000,"oh":{"w":[[1020,1440],[1020,1440],[1020,1440],[1020,1440],[1020,1440],[1020,1440],[1020,1440]],"brk":null,"offKnown":false}},{"id":"food62","kind":"food","name":"투파인드피터 충주연수점","cat":"양식","area":"충주 시내","loc":"충북 충주시 연수동산로2길 3 2층 201호","map":"https://naver.me/GeURtqMe","tel":"0507-1341-4919","hours":"11:00-22:00 (브레이크 15:00-16:30)","off":"없음(매일 영업)","price":"11,000-18,000원","group":null,"perk":null,"menu":"파스타 11,000-18,000원대","how":null,"intro":"샐러드·파스타 체인 양식점. 대기가 없고 데이트하기 좋다.","ref":"https://www.diningcode.com/profile.php?rid=43IPEuEyS3Qb","date":"2026-10-06","pmin":11000,"oh":{"w":[[660,1320],[660,1320],[660,1320],[660,1320],[660,1320],[660,1320],[660,1320]],"brk":[900,990],"offKnown":true}},{"id":"food63","kind":"food","name":"학생식당 THE HUE","cat":"학식","area":"교내","loc":"충북 충주시 대소원면 대학로 50 대학본부(E8) 복지관","map":"https://naver.me/xTsMpYvQ","tel":null,"hours":"교직원식당 12시 무렵부터 (12:00/12:10 기록이 다름)","off":"방학 중 1층 학생식당 휴점","price":"학생식당 최대 5,000원 / 교직원식당 5,500원","group":null,"perk":null,"menu":"교직원식당 뷔페 1인 5,500원","how":"학생식당 1층, 교직원식당은 그 위층(파일마다 '한 층 위'와 '3층'으로 다름)","intro":"학생식당은 최대 5,000원, 위층 교직원식당 뷔페는 5,500원. 방학엔 교직원식당만 운영.","ref":null,"date":"2026-10-07","pmin":5000},{"id":"food64","kind":"food","name":"한솥도시락 충주교통대점","cat":"간편식","area":"대학로","loc":"충북 충주시 대소원면 대학로 21 1호","map":"https://naver.me/F758CQyD","tel":"043-844-8869","hours":"08:00-20:00","off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"혼자 먹기 좋은 도시락 프랜차이즈.","ref":null,"date":"2026-10-06","pmin":null,"oh":{"w":[[480,1200],[480,1200],[480,1200],[480,1200],[480,1200],[480,1200],[480,1200]],"brk":null,"offKnown":false}},{"id":"food65","kind":"food","name":"핵밥 교통대점","cat":"일식","area":"대학로","loc":"충북 충주시 대소원면 대학로 6","map":"https://naver.me/5XJAWCXH","tel":"043-852-6277","hours":"11:00-22:00 (브레이크 15:00-17:00)","off":"없음(매일 영업)","price":"10,900-15,900원","group":null,"perk":null,"menu":"덮밥, 마제소바, 돈까스","how":null,"intro":"키오스크로 주문하는 덮밥집. 말없이 혼자 주문할 수 있다.","ref":"https://www.diningcode.com/profile.php?rid=mklVtDF4gwHN","date":"2026-10-07","pmin":10900,"oh":{"w":[[660,1320],[660,1320],[660,1320],[660,1320],[660,1320],[660,1320],[660,1320]],"brk":[900,1020],"offKnown":true}},{"id":"food66","kind":"food","name":"화곡구이","cat":"고기·구이","area":"충주 외곽","loc":"충북 충주시 주덕읍 화개2길 3 나동 109호","map":"https://naver.me/xI1tuVUb","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-09-03","pmin":null},{"id":"food67","kind":"food","name":"후라토식당 충주점","cat":"일식","area":"충주 시내","loc":"충북 충주시 호암토성2로 3 선우프라자 2층 201호","map":"https://naver.me/GDafwATF","tel":"0507-1338-0956","hours":"11:00-21:30 (브레이크 15:00-17:00)","off":null,"price":"10,000-19,500원","group":null,"perk":null,"menu":"규카츠, 스테끼 정식, 에비카츠동","how":"교통대에서 차로 13분","intro":null,"ref":"https://www.diningcode.com/profile.php?rid=vXfIbhRDpN2z","date":"2026-10-05","pmin":10000,"oh":{"w":[[660,1290],[660,1290],[660,1290],[660,1290],[660,1290],[660,1290],[660,1290]],"brk":[900,1020],"offKnown":false}},{"id":"cafe68","kind":"cafe","name":"굿나잇커피앤북","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 행정5길 25 1층","map":"https://map.naver.com/p/entry/place/1057582602","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe69","kind":"cafe","name":"듀레베이커리","cat":"베이커리","area":null,"loc":"충북 충주시 중원대로 3250 1층","map":null,"tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"넓은 마당과 야외 자리가 있는 깔끔한 베이커리. 무료 주차.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe70","kind":"cafe","name":"드랍바이","cat":"카페·디저트","area":"대학로","loc":"충북 충주시 대소원면 용두제방길 4 1층","map":"https://naver.me/FBMXKtQH","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"와플","how":null,"intro":"와플이 맛있는 테이크아웃 카페. 겨울엔 붕어빵도 판다.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe71","kind":"cafe","name":"밀크티인","cat":"카페·디저트","area":"대학로","loc":"충북 충주시 대소원면 대학로 10","map":"https://naver.me/5B00vJjM","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"밀크티","how":null,"intro":"대학로에서 특색 있는 카페를 찾을 때 추천하는 밀크티 맛집.","ref":null,"date":null,"pmin":null},{"id":"cafe72","kind":"cafe","name":"서리꽃","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 성서2길 20 1층 103호","map":"https://map.naver.com/p/entry/place/1250616851","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe73","kind":"cafe","name":"아흐레커피","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 대흥길 42","map":"https://map.naver.com/p/entry/place/1952540278","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe74","kind":"cafe","name":"째즈와산조","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 지곡6길 39","map":"https://map.naver.com/p/entry/place/36655170","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"감성 분위기의 데이트 카페. 날마다 시그니처 메뉴가 있다.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe75","kind":"cafe","name":"카페 슬로우 모닝즈 충주본점","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 봉계13길 30 1층","map":"https://map.naver.com/p/entry/place/1208664909","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"소금빵 2,000원대","how":null,"intro":"빵·샌드위치 카페(약 25석). 2,000원대 소금빵 추천.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe76","kind":"cafe","name":"카페샵오팔","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 청운로 58-1 4층~6층","map":"https://map.naver.com/p/entry/place/1200943881","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"디저트를 골라 먹는 재미가 있는 디저트 카페.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe77","kind":"cafe","name":"커피단월","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 충원대로 55","map":"https://naver.me/xAFCN08a","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"2-3층 통창 풍경이 있는 넓은 빵·커피 카페. 가격대는 있는 편.","ref":null,"date":"2026-10-07","pmin":null},{"id":"cafe78","kind":"cafe","name":"컴포즈커피","cat":"카페·디저트","area":"대학로","loc":"충북 충주시 대소원면 대학로 27","map":"https://naver.me/xpjcky0B","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":null,"intro":"언제 가도 주문이 원활한 대학로 카페.","ref":null,"date":"2026-10-06","pmin":null},{"id":"cafe79","kind":"cafe","name":"파리바게뜨 서충주농협점","cat":"베이커리","area":"대소원면","loc":"충북 충주시 대소원면 중원대로 3930","map":"https://naver.me/GUmUHvu2","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":null,"how":"학교 반대편으로 조금 나가서 하나로마트 쪽으로 꺾으면 있음","intro":"학교 반대편 하나로마트 쪽에 있어 신입생이 잘 모르는 빵집.","ref":null,"date":null,"pmin":null},{"id":"cafe80","kind":"cafe","name":"평정","cat":"카페·디저트","area":"충주 시내","loc":"충북 충주시 성서1길 14-1","map":"https://map.naver.com/p/entry/place/1196620055","tel":null,"hours":null,"off":null,"price":null,"group":null,"perk":null,"menu":"푸딩 6종(커피젤리, 커스터드, 우유, 초코, 말차, 얼그레이) 평균 5,500원대","how":null,"intro":"푸딩 6종만 파는 디저트집. 우유·커스터드 푸딩 추천.","ref":null,"date":"2026-10-06","pmin":5500},{"id":"place81","kind":"place","name":"도서관 1층 1인캐럴실 공부장소","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 1층","bld":"W20","map":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place82","kind":"place","name":"생활관 독서실","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 각 생활관(국원 5층 중앙, 예성 관리동 2층, 중원 6층, 대원 2층)","bld":null,"map":null,"how":null,"intro":"시험 기간 도서관 자리 경쟁을 피해 공부하는 곳. 생활관마다 위치가 다르다.","ref":"충주생활관 생활안내","date":"2026-10-06","recs":1},{"id":"place83","kind":"place","name":"중앙도서관 2층 디지털정보센터","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 2층","bld":null,"map":"https://naver.me/IFEuEdnL","how":null,"intro":"2026년 9월 새 단장한 라운지형 공간. 카페 같은 분위기에서 공부하고 쉴 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place84","kind":"place","name":"중앙도서관 3층 열람실","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 3층","bld":"W20","map":"https://map.naver.com/p/entry/place/17792124","how":"1층 게이트에서 모바일 학생증 바코드 태그","intro":"전 좌석에 콘센트와 Wi-Fi가 있고 같은 층에 CU 편의점이 있다.","ref":null,"date":"2026-10-07","recs":1},{"id":"place85","kind":"place","name":"캐럴실","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 3층","bld":null,"map":null,"how":"디지털정보센터 예약시스템으로 예약","intro":"개인 열람실.","ref":"https://mchains.ut.ac.kr/guide/Static.ax?page=service1","date":"2026-10-06","recs":1},{"id":"place86","kind":"place","name":"한국교통대학교 충주캠퍼스중앙도서관","cat":"공부공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":"W20","map":"https://naver.me/IFEuEdnL","how":null,"intro":"리모델링으로 시설이 좋아졌다. 야외 테라스가 노을 명소.","ref":null,"date":"2026-10-06","recs":2},{"id":"place87","kind":"place","name":"국원노천극장","cat":"공연장","inside":"O","loc":"충북 충주시 대소원면 대학로 50 국원노천극장","bld":null,"map":"https://naver.me/FZ8Fndy6","how":null,"intro":"학생 공연·행사가 열리는 야외 공간. 행사 없는 날엔 계단식 좌석에서 쉬기 좋고 흔들의자는 커플 명당.","ref":null,"date":"2026-10-06","recs":2},{"id":"place88","kind":"place","name":"인문사회관소극장","cat":"공연장","inside":"O","loc":"충북 충주시 대소원면 대학로 50 인문사회관","bld":null,"map":null,"how":null,"intro":null,"ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place89","kind":"place","name":"청설모 발견 장소","cat":"기타","inside":"O","loc":"충북 충주시 대소원면 대학로 50 미래융합정보관 앞 나무","bld":"W18","map":"https://naver.me/IxKl3jzm","how":null,"intro":null,"ref":null,"date":"2026-09-22","recs":1},{"id":"place90","kind":"place","name":"벚꽃길","cat":"벚꽃길","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/GZDBRXG7","how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place91","kind":"place","name":"인문사회관 벚꽃길","cat":"벚꽃길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 인문사회관으로 올라가는 길","bld":null,"map":null,"how":null,"intro":"봄에 벚꽃 사진 찍기 좋은 길. 오르막이라 조금 힘들다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place92","kind":"place","name":"건설환경관과 스마트 ICT가는 중앙 고가길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 건설환경관-스마트ICT관 사이 차도 옆 인도","bld":null,"map":null,"how":null,"intro":"밤에 펜스 전등이 켜지고 나무데크와 나무가 많아 숲길처럼 걷기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place93","kind":"place","name":"교통대 둘레길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 정문 출발 순환 코스","bld":null,"map":"https://naver.me/xXwnwCdy","how":null,"intro":"정문에서 테크노관·스마트ICT관·생활관·IT관·대학원을 지나 돌아오는 약 3.26km 순환 코스. 빠르게 걸으면 약 1시간.","ref":null,"date":"2026-10-06","recs":1},{"id":"place94","kind":"place","name":"대원생활관 뒷길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/xLN9zRcK","how":null,"intro":"주변에 아무것도 없어 조용한 길. 썸 탈 때 가기 좋고 E15동 앞에서 야경도 볼 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place95","kind":"place","name":"대학본부 뒤 산책길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부 뒤(건설환경관 방향)","bld":null,"map":"https://naver.me/55PRULTi","how":null,"intro":"평지 위주에 양옆으로 나무가 이어져 수업 사이 가볍게 걷기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place96","kind":"place","name":"분위기 좋은 산책 코스","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대원생활관 뒤쪽","bld":null,"map":null,"how":null,"intro":"사람과 차가 적어 조용히 걷기 좋은 길. 혼자, 친구, 연인 모두 좋다.","ref":null,"date":null,"recs":1},{"id":"place97","kind":"place","name":"스마트 ICT관 뒷 산책길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 학군단 건물 옆 숲길","bld":null,"map":null,"how":null,"intro":"밤에 친구들과 가면 담력체험, 낮에 혼자 걸으면 숲길 느낌이 난다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place98","kind":"place","name":"인사대 옆 숲길","cat":"산책길","inside":"O","loc":"충북 충주시 대소원면 대학로 50 인사대 옆(교통대 둘레길 코스)","bld":null,"map":null,"how":null,"intro":"교통대 둘레길 코스 중 하나인 숲길.","ref":null,"date":"2026-10-06","recs":1},{"id":"place99","kind":"place","name":"학교 내 산책길","cat":"산책길","inside":"O","loc":null,"bld":null,"map":"https://naver.me/Fx2WyHhg","how":null,"intro":"길을 따라 걷기 좋다.","ref":null,"date":null,"recs":1},{"id":"place100","kind":"place","name":"대학본부 3층 교직원식당","cat":"식당","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부 3층","bld":"E8","map":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place101","kind":"place","name":"대학본부 학생식당","cat":"식당","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부","bld":null,"map":null,"how":"메뉴는 학교 홈페이지 식단표에서 확인","intro":"식당 없는 국원생활관 학생들이 주로 가는 곳. 한식·일품 코너가 있다.","ref":"https://www.ut.ac.kr/prog/mealManage/MT01/kor/sub06_02_02_01/list.do","date":"2026-10-06","recs":1},{"id":"place102","kind":"place","name":"예성생활관식당","cat":"식당","inside":"O","loc":"충북 충주시 대소원면 대학로 50 예성중원관리동","bld":"W13","map":"https://map.naver.com/p/search/%EC%98%88%EC%84%B1%EA%B4%80%EB%A6%AC%EB%8F%99","how":"학교 사이트에서 식단 확인 후 식권 구매","intro":"식단을 미리 보고 메뉴 좋은 날 가면 외식보다 훨씬 저렴하게 먹을 수 있는 생활관 식당.","ref":null,"date":"2026-10-06","recs":1},{"id":"place103","kind":"place","name":"학생식당","cat":"식당","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부 복지관 1층","bld":null,"map":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place104","kind":"place","name":"야경맛집","cat":"야경·전망","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/Fz8iLbxK","how":null,"intro":"충주 시내가 한눈에 보여 밤에 예쁘다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place105","kind":"place","name":"한국교통대학교 충주캠퍼스주차장","cat":"야경·전망","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/FTMNt0be","how":null,"intro":"인사대에서 이어진 길로 학곡산이 보이는 곳. 노을 질 때 예쁘다.","ref":null,"date":"2026-10-07","recs":1},{"id":"place106","kind":"place","name":"대운동장 스탠드 및 트랙","cat":"운동시설","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대운동장","bld":"W19","map":"https://map.naver.com/p/entry/place/1867870762","how":null,"intro":"유학생들과 축구·농구·조깅을 하는 야외 체육 공간. 18시 이후 조명이 켜지고 스탠드는 공강 때 쉬기 좋다.","ref":null,"date":"2026-10-07","recs":1},{"id":"place107","kind":"place","name":"대학본부 3층 전시공간","cat":"전시공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부 3층","bld":null,"map":null,"how":null,"intro":null,"ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place108","kind":"place","name":"인문사회예술대학 지름길 가는 법","cat":"지름길","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/5f5nVIPK","how":null,"intro":"오르막을 오르다 건설환경관에 들어가 엘리베이터를 타면 인사대까지 거리를 줄일 수 있다.","ref":null,"date":null,"recs":1},{"id":"place109","kind":"place","name":"SPACE K – VR체험관","cat":"체험공간","inside":"O","loc":null,"bld":null,"map":null,"how":null,"intro":"LINC 3.0 사업단이 운영한다. 같은 사업단의 VR상영관도 있다.","ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place110","kind":"place","name":"SPACE K – 코딩아카데미센터","cat":"체험공간","inside":"O","loc":null,"bld":null,"map":null,"how":null,"intro":"산학연공유·협업센터가 운영한다.","ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place111","kind":"place","name":"SPACE-K 1인 스튜디오","cat":"체험공간","inside":"O","loc":null,"bld":null,"map":null,"how":null,"intro":"LINC 3.0 사업단이 운영한다.","ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place112","kind":"place","name":"소담스퀘어 충북","cat":"체험공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 E3동 1층","bld":"E3","map":"https://naver.me/FPnrRT95","how":"네이버 예약","intro":"스튜디오, 공유오피스 회의실 등을 무료로 이용할 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place113","kind":"place","name":"블루포트 한국교통대학교점","cat":"카페","inside":"O","loc":"충북 충주시 대소원면 대학로 50 인문사회관 1층","bld":null,"map":"https://naver.me/x4GV13TR","how":null,"intro":"영업시간 외에도 공부할 수 있게 열려 있고, 주문 없이 조별과제 하기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place114","kind":"place","name":"카페플로르(FLORE)","cat":"카페","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부","bld":null,"map":null,"how":null,"intro":"높은 곳에 있어 전망이 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place115","kind":"place","name":"종합강의관 1층","cat":"편의시설","inside":"O","loc":"충북 충주시 대소원면 대학로 50 종합강의관 1층","bld":"W5","map":null,"how":null,"intro":"프린트, 은행, 우편, 안경점 등 필요한 업무를 한곳에서 볼 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place116","kind":"place","name":"한국교통대학교 종합강의동","cat":"편의시설","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":"W5","map":"https://naver.me/xOdMfdXy","how":null,"intro":"앞에 CU와 야외 테이블이 있고 은행·우체국·프린트 업무를 볼 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place117","kind":"place","name":"공강 때 쉬는 장소","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 2층","bld":"W20","map":"https://naver.me/IFEuEdnL","how":null,"intro":null,"ref":null,"date":"2026-10-02","recs":1},{"id":"place118","kind":"place","name":"대학 라운지","cat":"휴식공간","inside":"O","loc":null,"bld":null,"map":null,"how":null,"intro":"브랜드전략실이 관리하는 공간.","ref":"https://www.ut.ac.kr/kor/sub06_04_02_01.do","date":"2026-10-06","recs":1},{"id":"place119","kind":"place","name":"대학본부 앞 잔디광장 벤치","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 대학본부 앞 잔디광장","bld":"E8","map":"https://map.naver.com/p/entry/place/20973405","how":null,"intro":"벤치에서 공강 시간에 쉬기 좋고, 봄 벚꽃·가을 단풍 사진 명소.","ref":null,"date":"2026-10-07","recs":1},{"id":"place120","kind":"place","name":"도서관 2층 휴식장소","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 중앙도서관 2층","bld":"W20","map":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place121","kind":"place","name":"인문사회예술대학 공강 때 시간 보내는 곳","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":null,"map":"https://naver.me/FHO0SCdz","how":null,"intro":"행사 없을 땐 비어 있는 인문사회대학 소극장 강의실. 영화관 같은 의자에서 조용히 쉬기 좋다(아는 척 안 하는 게 룰).","ref":null,"date":null,"recs":1},{"id":"place122","kind":"place","name":"종합강의관 휴게라운지","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 종합강의관 1층·3층","bld":"W5","map":"https://map.naver.com/p/entry/place/17792199","how":"1층은 모바일 학생증 QR 태그, 3층은 자유 출입","intro":"소파와 충전 콘센트가 있어 연강 사이 공강에 머물기 좋다. 1층에 농협은행 출장소.","ref":null,"date":"2026-10-07","recs":1},{"id":"place123","kind":"place","name":"학생회관 3, 4층 로비 휴식장소","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50 학생회관 3·4층 로비","bld":"E6","map":null,"how":null,"intro":null,"ref":null,"date":"2026-10-06","recs":1},{"id":"place124","kind":"place","name":"한국교통대학교 국원 쉼터","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":"E2","map":"https://naver.me/5ZSzHSvl","how":null,"intro":"앉을 곳과 그늘이 있어 잠깐 쉬거나 모임 장소로 정하기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place125","kind":"place","name":"한국교통대학교 인문사회예술대학(인사대)","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":"E14","map":"https://naver.me/FHO0SCdz","how":null,"intro":"1층 카페와 로비·야외 테이블에서 쉬기 좋고, 조금 올라가면 후문 편의점이 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place126","kind":"place","name":"휴스퀘어동(W5동)","cat":"휴식공간","inside":"O","loc":"충북 충주시 대소원면 대학로 50","bld":"W5","map":"https://naver.me/IFGoZ2wU","how":null,"intro":"그늘막과 앉을 곳이 있고 캠퍼스 중앙이라 어디든 이동이 편하다. 앞 카페에서 커피 사기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place127","kind":"place","name":"IT관 앞 벤치 흡연장","cat":"흡연장","inside":"O","loc":"충북 충주시 대소원면 대학로 50 IT관 앞","bld":"W16","map":null,"how":null,"intro":"해 질 때 담배 피우기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place128","kind":"place","name":"세븐스타코인노래연습장 충주교통대점","cat":"놀거리","inside":"X","loc":"충북 충주시 대소원면 대학로 24 1층","bld":null,"map":"https://naver.me/F5sr8zz5","how":null,"intro":"회원 가입하면 적립금을 많이 주고, 남은 곡을 저장해 다음에 이어 부를 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place129","kind":"place","name":"이디야커피 충주교통대점","cat":"카페","inside":"X","loc":"충북 충주시 대소원면 대학로 11","bld":null,"map":"https://map.naver.com/p/entry/place/1914596127","how":null,"intro":"정문에서 걸어서 5분. 콘센트 좌석이 있어 과제·조모임 하기 좋다.","ref":null,"date":"2026-10-07","recs":1},{"id":"place130","kind":"place","name":"달천러닝코스","cat":"러닝코스","inside":"X","loc":"충북 충주시 대소원면 검단리 산21-8","bld":null,"map":"https://naver.me/5wrFX4ce","how":null,"intro":"CU 한국교통대학사점에서 탄금교 들어가기 전까지 약 3km.","ref":null,"date":"2026-10-06","recs":1},{"id":"place131","kind":"place","name":"산책로","cat":"산책길","inside":"X","loc":"충북 충주시 대소원면 검단리 73-14","bld":null,"map":"https://naver.me/xYN7qQ3l","how":null,"intro":"입구에서 하검단교까지 약 1km. 가로등이 거의 없어 밤엔 둘 이상 추천, 맑은 밤엔 별이 잘 보인다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place132","kind":"place","name":"요도천변길 산책","cat":"산책길","inside":"X","loc":"충북 충주시 대소원면 검단리 120-2","bld":null,"map":"https://naver.me/5hocKGPL","how":null,"intro":"적당히 어둡고 별이 잘 보이는 산책 코스. 너무 멀리 가면 가로등이 없어 무섭다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place133","kind":"place","name":"충주야경","cat":"야경·전망","inside":"X","loc":"충북 충주시 대소원면 검단리 산21-26","bld":null,"map":"https://naver.me/xQJ4FKrq","how":null,"intro":"가파른 오르막을 올라가면 맑은 공기를 마실 수 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place134","kind":"place","name":"카페 제이","cat":"카페","inside":"X","loc":"충북 충주시 대소원면 요도천변길 299","bld":null,"map":"https://naver.me/GL8ircx9","how":null,"intro":"인사대 후문 쪽 커피 맛있는 카페. 테이크아웃해서 내천을 걷기 좋다.","ref":null,"date":"2026-10-07","recs":1},{"id":"place135","kind":"place","name":"낚시 스팟","cat":"낚시","inside":"X","loc":"충북 충주시 칠금동 523","bld":null,"map":null,"how":null,"intro":"민물고기가 잡히고 물가라 시원한 낚시 장소. 낚싯대가 필요하고 냄새가 조금 난다.","ref":null,"date":null,"recs":1},{"id":"place136","kind":"place","name":"하방마을 벚꽃길","cat":"벚꽃길","inside":"X","loc":"충북 충주시 봉방동 517-1","bld":null,"map":"https://naver.me/FgEILHWJ","how":null,"intro":"양쪽 벚꽃나무 행렬이 500m 이상 이어진다.","ref":null,"date":"2025-03-20","recs":1},{"id":"place137","kind":"place","name":"하방마을회관","cat":"벚꽃길","inside":"X","loc":"충북 충주시 하방1길 61","bld":null,"map":"https://naver.me/5gFt5Dqt","how":null,"intro":"학교에서 그나마 가까운 시내 벚꽃길. 데이트 코스로 추천.","ref":null,"date":"2026-10-06","recs":1},{"id":"place138","kind":"place","name":"호암지","cat":"산책길","inside":"X","loc":"충북 충주시 호암동 653-3","bld":null,"map":"https://naver.me/GqfS5get","how":null,"intro":"산책하기 지겹지 않은 호수공원. 러닝 코스로도 좋다(둘레 기록이 '약 4km'와 '두 바퀴 6km'로 다름).","ref":null,"date":"2026-10-06","recs":2},{"id":"place139","kind":"place","name":"충주종합운동장보조경기장","cat":"운동시설","inside":"X","loc":"충북 충주시 대림로 85","bld":null,"map":"https://map.naver.com/p/entry/place/1479231076","how":null,"intro":"한 바퀴 400m, 6레인 러닝 트랙. 저녁 6-10시에 러닝하는 사람이 꽤 있다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place140","kind":"place","name":"파스쿠찌 충주칠금점","cat":"카페","inside":"X","loc":"충북 충주시 칠금동 842","bld":null,"map":"https://naver.me/xprpznbK","how":null,"intro":"공부하기 좋은 넓은 좌석과 밤 12시까지 긴 영업시간.","ref":null,"date":"2026-10-05","recs":1},{"id":"place141","kind":"place","name":"드라이브 가기 좋은 장소","cat":"드라이브","inside":"X","loc":"충북 충주시 중앙탑면 중앙탑길 251","bld":null,"map":"https://naver.me/x3cOiagj","how":null,"intro":"중앙탑길 251에서 동량면 캠핑808(미라실로 689-1)까지 가는 드라이브 코스.","ref":null,"date":"2026-03-19","recs":1},{"id":"place142","kind":"place","name":"탄금대교","cat":"드라이브","inside":"X","loc":"충북 충주시 금가면 유송리","bld":null,"map":"https://naver.me/xMjHkPb8","how":null,"intro":"학교와 시내를 차로 오갈 때 지나며 중간중간 야경이 보인다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place143","kind":"place","name":"교통대 러닝코스","cat":"러닝코스","inside":"X","loc":"충북 충주시 중앙탑면 창동리 74-3","bld":null,"map":null,"how":null,"intro":"하천 옆 차가 못 들어오는 1.5km 코스로 왕복 3km. 운동장 트랙보다 장거리 러닝에 좋다.","ref":null,"date":null,"recs":1},{"id":"place144","kind":"place","name":"러닝코스","cat":"러닝코스","inside":"X","loc":"충북 충주시 중앙탑면 창동리 43-6","bld":null,"map":"https://naver.me/GZDBRThY","how":null,"intro":"강 따라 왕복 3km 조금 안 되고, 학교에서 달려와 왕복 후 돌아가면 약 6.5km. 저녁에 달리기 좋다.","ref":null,"date":"2026-10-06","recs":1},{"id":"place145","kind":"place","name":"탄금호무지개길","cat":"산책길","inside":"X","loc":"충북 충주시 중앙탑면 루암리 642","bld":null,"map":"https://naver.me/513UP41P","how":null,"intro":"싸운 커플이 같이 가면 화해하는 곳.","ref":null,"date":"2026-09-28","recs":1},{"id":"place146","kind":"place","name":"앤쏘온","cat":"카페","inside":"X","loc":"충북 충주시 수안보면 안보복거리길 70 1층","bld":null,"map":"https://naver.me/xeAfRTju","how":null,"intro":"LP카페.","ref":null,"date":null,"recs":1},{"id":"place147","kind":"place","name":"호수가아름다운전망대","cat":"카페","inside":"X","loc":"충북 충주시 동량면 지등로 1391","bld":null,"map":"https://naver.me/GoD7vjgx","how":null,"intro":null,"ref":null,"date":"2026-05-25","recs":1}];
+const BYID = Object.fromEntries(ITEMS.map(it => [it.id, it]));
+
+/* ---------- 그림 ---------- */
+const THEME = { food: ["--t4", "--s4"], cafe: ["--t1", "--s1"], walk: ["--t2", "--s2"], study: ["--t3", "--s3"], night: ["--t5", "--s5"], rest: ["--t2", "--s2"], etc: ["--t3", "--s3"] };
+function group(it) {
+  if (it.kind === "food") return "food";
+  if (it.kind === "cafe") return "cafe";
+  const c = it.cat || "";
+  if (/카페|식당/.test(c)) return c === "카페" ? "cafe" : "food";
+  if (/산책|러닝|벚꽃|드라이브|낚시|운동/.test(c)) return "walk";
+  if (/공부/.test(c)) return "study";
+  if (/야경/.test(c)) return "night";
+  if (/휴식|공연|흡연/.test(c)) return "rest";
+  return "etc";
+}
+const SHAPES = {
+  food: `<ellipse cx="160" cy="118" rx="70" ry="16" style="fill:var(--c2)" opacity=".45"/><path d="M92 92h136c0 34-30 52-68 52s-68-18-68-52z" style="fill:var(--c2)"/><path d="M120 80c6-10-6-16 0-26M150 78c6-10-6-16 0-26M180 80c6-10-6-16 0-26" style="stroke:var(--c2);fill:none" stroke-width="4" stroke-linecap="round" opacity=".8"/>`,
+  cafe: `<rect x="112" y="64" width="80" height="78" rx="12" style="fill:var(--c2)"/><path d="M192 82h12a18 18 0 0 1 0 36h-12" style="stroke:var(--c2);fill:none" stroke-width="8"/><path d="M134 52c6-9-6-14 0-22M158 52c6-9-6-14 0-22" style="stroke:var(--c2);fill:none" stroke-width="4" stroke-linecap="round" opacity=".8"/>`,
+  walk: `<path d="M0 150 C80 120 140 160 200 130 S300 110 320 120 V200 H0z" style="fill:var(--c2)" opacity=".5"/><path d="M150 200 C160 160 190 150 210 120" style="stroke:var(--c2);fill:none" stroke-width="8" stroke-dasharray="4 14" stroke-linecap="round"/><circle cx="90" cy="88" r="30" style="fill:var(--c2)"/><rect x="87" y="110" width="6" height="34" style="fill:var(--c2)"/><circle cx="240" cy="78" r="22" style="fill:var(--c2)" opacity=".8"/><rect x="238" y="96" width="4" height="26" style="fill:var(--c2)" opacity=".8"/>`,
+  study: `<path d="M84 70l76 14 76-14v82l-76 14-76-14z" style="fill:var(--c2)" opacity=".5"/><path d="M160 84v82" style="stroke:var(--c2)" stroke-width="4"/><path d="M84 70l76 14v82l-76-14z" style="fill:var(--c2)"/>`,
+  night: `<circle cx="210" cy="62" r="24" style="fill:var(--c2)"/><circle cx="221" cy="55" r="22" style="fill:var(--c1)"/><path d="M0 160h40v-30h30v18h26v-44h28v56h30v-24h24v40h34v-58h26v38h30v-20h30v36h22V200H0z" style="fill:var(--c2)" opacity=".85"/><circle cx="70" cy="50" r="2" style="fill:var(--c2)"/><circle cx="120" cy="34" r="1.6" style="fill:var(--c2)"/><circle cx="150" cy="70" r="1.6" style="fill:var(--c2)"/>`,
+  rest: `<rect x="80" y="108" width="160" height="10" rx="4" style="fill:var(--c2)"/><rect x="80" y="88" width="160" height="8" rx="4" style="fill:var(--c2)" opacity=".7"/><rect x="97" y="118" width="6" height="30" style="fill:var(--c2)"/><rect x="217" y="118" width="6" height="30" style="fill:var(--c2)"/><circle cx="250" cy="56" r="18" style="fill:var(--c2)" opacity=".5"/>`,
+  etc: `<circle cx="160" cy="96" r="44" style="fill:var(--c2)" opacity=".5"/><path d="M160 60v36l24 14" style="stroke:var(--c2);fill:none" stroke-width="6" stroke-linecap="round"/>`,
+  grill: `<rect x="70" y="70" width="180" height="90" rx="10" style="fill:var(--c2)" opacity=".3"/><path d="M84 88h152M84 106h152M84 124h152M84 142h152" style="stroke:var(--c2)" stroke-width="3"/><ellipse cx="128" cy="112" rx="30" ry="14" style="fill:var(--c2)"/><ellipse cx="196" cy="104" rx="28" ry="13" style="fill:var(--c2)" opacity=".85"/>`,
+  noodle: `<path d="M92 96h136c0 34-30 52-68 52s-68-18-68-52z" style="fill:var(--c2)"/><path d="M120 96c0-30 10-40 10-60M146 96c0-30 10-40 10-60M172 96c0-30 10-40 10-60" style="stroke:var(--c2);fill:none" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M200 30l40 70M214 26l36 72" style="stroke:var(--c2)" stroke-width="5" stroke-linecap="round"/>`,
+  sushi: `<rect x="74" y="92" width="76" height="46" rx="20" style="fill:var(--c2)"/><rect x="170" y="92" width="76" height="46" rx="20" style="fill:var(--c2)"/><path d="M74 100c20-22 56-22 76 0z" style="fill:var(--c2)" opacity=".5"/><path d="M170 100c20-22 56-22 76 0z" style="fill:var(--c2)" opacity=".5"/><ellipse cx="160" cy="150" rx="110" ry="10" style="fill:var(--c2)" opacity=".3"/>`,
+  burger: `<path d="M100 96c0-32 120-32 120 0z" style="fill:var(--c2)"/><rect x="94" y="102" width="132" height="10" rx="5" style="fill:var(--c2)" opacity=".6"/><rect x="98" y="116" width="124" height="16" rx="8" style="fill:var(--c2)"/><path d="M100 136h120c0 14-14 18-60 18s-60-4-60-18z" style="fill:var(--c2)" opacity=".85"/>`,
+  skewer: `<path d="M70 150L250 60" style="stroke:var(--c2)" stroke-width="4" stroke-linecap="round"/><rect x="96" y="114" width="40" height="22" rx="11" style="fill:var(--c2)" transform="rotate(-27 116 125)"/><rect x="140" y="92" width="40" height="22" rx="11" style="fill:var(--c2)" transform="rotate(-27 160 103)"/><rect x="184" y="70" width="40" height="22" rx="11" style="fill:var(--c2)" transform="rotate(-27 204 81)"/>`,
+  glass: `<path d="M120 60h80l-10 90h-60z" style="fill:var(--c2)" opacity=".45"/><path d="M126 96h68l-6 54h-56z" style="fill:var(--c2)"/><circle cx="214" cy="70" r="5" style="fill:var(--c2)"/><circle cx="226" cy="90" r="3.5" style="fill:var(--c2)"/>`,
+  chicken: `<ellipse cx="150" cy="100" rx="52" ry="40" style="fill:var(--c2)" transform="rotate(-20 150 100)"/><rect x="186" y="114" width="44" height="12" rx="6" style="fill:var(--c2)" opacity=".8" transform="rotate(25 208 121)"/><circle cx="236" cy="140" r="10" style="fill:var(--c2)" opacity=".8"/>`
+};
+const FOOD_ART = { "고기·구이": ["grill", "--t4", "--s4"], "중식": ["noodle", "--t1", "--s1"], "아시안": ["noodle", "--t1", "--s1"],
+  "일식": ["sushi", "--t3", "--s3"], "간편식": ["burger", "--t1", "--s1"], "양식": ["burger", "--t2", "--s2"],
+  "분식": ["skewer", "--t4", "--s4"], "술집": ["glass", "--t5", "--s5"], "치킨": ["chicken", "--t1", "--s1"] };
+function art(it, g) {
+  g = g || group(it);
+  let [c1, c2] = THEME[g];
+  const fa = g === "food" && FOOD_ART[it.cat];
+  if (fa) { [g, c1, c2] = fa; }
+  const hash = [...(it.name || g)].reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const tilt = (hash % 7) - 3;
+  return `<svg class="art" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="--c1:var(${c1});--c2:var(${c2})"><rect width="320" height="200" style="fill:var(--c1)"/><g transform="rotate(${tilt} 160 100)">${SHAPES[g] || SHAPES.etc}</g></svg>`;
+}
+
+/* ---------- 도우미 ---------- */
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const KIND = { food: "맛집", cafe: "카페", place: "숨은 장소" };
+const where = it => it.kind === "place" ? (it.inside === "O" ? "학교 안" : it.inside === "X" ? "학교 밖" : "") : (it.area || "");
+const won = n => n ? n.toLocaleString("ko-KR") + "원~" : "";
+const FIELDS = it => it.kind === "place"
+  ? [["위치", it.loc], ["건물", it.bld], ["이용 방법", it.how], ["확인한 날", it.date]]
+  : [["위치", it.loc], ["전화", it.tel, "mono"], ["영업시간", it.hours, "mono"], ["휴무일", it.off], ["가격대", it.price, "mono"], ["대표 메뉴", it.menu], ["학생 혜택", it.perk], ["단체식사", it.group === "O" ? "가능" : it.group === "X" ? "어려움" : null], ["가는 법", it.how], ["확인한 날", it.date]];
+const infoScore = it => FIELDS(it).filter(f => f[1]).length + (it.intro ? 2 : 0) + (it.map ? 1 : 0);
+const late = it => /24시간|24:00|23:00|23:30|새벽|25:00/.test((it.hours || "") + (it.intro || ""));
+const solo = it => /혼밥|혼자|1인/.test((it.intro || "") + (it.menu || ""));
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+};
+
+/* ---------- 영업 상태 (한국 시간 기준) ---------- */
+const WD = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+function kstNow() {
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Seoul", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date()).map(x => [x.type, x.value]));
+  return { d: WD[p.weekday], t: Number(p.hour) * 60 + Number(p.minute), hm: `${p.hour}:${p.minute}` };
+}
+const hhmm = m => m >= 1440 ? (m === 1440 ? "24:00" : `새벽 ${Math.floor((m - 1440) / 60)}:${String((m - 1440) % 60).padStart(2, "0")}`) : `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+function status(it) {
+  const oh = it.oh; if (!oh) return null;
+  const { d, t } = kstNow();
+  const unsure = !oh.offKnown;
+  const prev = oh.w[(d + 6) % 7];
+  if (Array.isArray(prev) && prev[1] > 1440 && t < prev[1] - 1440) return { k: "open", open: true, unsure, label: `영업 중 · ${hhmm(prev[1])} 마감` };
+  const today = oh.w[d];
+  if (today === "u") return null;
+  if (today === null) return { k: "off", unsure: false, label: "오늘 휴무" };
+  const [o, c] = today;
+  if (o === 0 && c === 1440) return { k: "open", open: true, unsure, label: "24시간 영업" };
+  if (t < o) return { k: "before", unsure, label: `영업 전 · ${hhmm(o)} 오픈` };
+  if (t >= c) return { k: "closed", unsure, label: "오늘 영업 종료" };
+  if (oh.brk && t >= oh.brk[0] && t < oh.brk[1] && oh.brk[1] < c) return { k: "break", unsure, label: `브레이크 · ${hhmm(oh.brk[1])} 재오픈` };
+  if (c - t <= 60) return { k: "soon", open: true, unsure, label: `곧 마감 · ${hhmm(c)}` };
+  return { k: "open", open: true, unsure, label: `영업 중 · ${hhmm(c)} 마감` };
+}
+const stHtml = id => `<span class="st" data-st="${id}" hidden></span>`;
+function paintStatus() {
+  document.querySelectorAll("[data-st]").forEach(el => {
+    const s = status(BYID[el.dataset.st]);
+    if (!s) { el.hidden = true; return; }
+    el.hidden = false; el.className = `st ${s.k}${s.unsure ? " unsure" : ""}`;
+    el.textContent = s.label; el.title = s.unsure ? "휴무일 정보가 없어 요일과 관계없이 계산했어요" : "기록된 영업시간 기준";
+  });
+  const now = kstNow();
+  document.getElementById("clock").textContent = `지금 ${now.hm}`;
+  const open = ITEMS.filter(it => status(it)?.open).sort((a, b) => (a.pmin || 1e9) - (b.pmin || 1e9));
+  document.getElementById("liveList").innerHTML = open.length
+    ? open.slice(0, 5).map(it => `<li><button type="button" data-id="${it.id}"><span>${esc(it.name)}</span>${stHtml(it.id)}</button></li>`).join("")
+    : `<li class="empty">영업시간이 기록된 곳 중 지금 열려 있는 곳이 없어요.</li>`;
+  document.getElementById("liveMore").hidden = !open.length;
+  document.querySelectorAll("#liveList [data-st]").forEach(el => { const s = status(BYID[el.dataset.st]); el.hidden = false; el.className = `st ${s.k}${s.unsure ? " unsure" : ""}`; el.textContent = s.label.replace(/^영업 중 · /, ""); });
+}
+
+/* ---------- 찜 ---------- */
+let FAV = new Set(JSON.parse(store.get("knut-fav") || "[]").filter(id => BYID[id]));
+let favTimer = null;
+function saveFav() {
+  store.set("knut-fav", JSON.stringify([...FAV]));
+  document.getElementById("favCount").textContent = FAV.size;
+  if (CAP.db && CAP.me) { clearTimeout(favTimer); favTimer = setTimeout(() => CAP.db.doc(`data/users/${CAP.me}/prefs`).set({ fav: [...FAV] }).catch(() => {}), 800); }
+}
+function toggleFav(id) {
+  FAV.has(id) ? FAV.delete(id) : FAV.add(id);
+  document.querySelectorAll(`[data-fav="${id}"]`).forEach(b => { b.setAttribute("aria-pressed", String(FAV.has(id))); b.setAttribute("aria-label", FAV.has(id) ? "찜 해제" : "찜하기"); });
+  saveFav();
+  if (state.tab === "fav") renderList();
+}
+const HEART = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>`;
+const favBtn = id => `<button class="fav" type="button" data-fav="${id}" aria-pressed="${FAV.has(id)}" aria-label="${FAV.has(id) ? "찜 해제" : "찜하기"}">${HEART}</button>`;
+
+/* ---------- 카드 ---------- */
+function rateHtml(id) { const r = reviewStats(id); return r.n ? `<span class="rate">${r.avg.toFixed(1)} <span style="color:var(--faint)">(${r.n})</span></span>` : ""; }
+function card(it) {
+  const intro = it.intro ? `<div class="line">${esc(it.intro)}</div>` : `<div class="empty">아직 소개가 없어요</div>`;
+  const badge = it.kind === "place" && it.bld ? it.bld : (it.cat || KIND[it.kind]);
+  return `<article class="card" data-id="${it.id}">
+    <div class="thumb">${art(it)}<span class="badge">${esc(badge)}</span>${favBtn(it.id)}</div>
+    <div class="body"><div class="meta">${esc([KIND[it.kind], it.kind === "place" ? it.cat : null, where(it)].filter(Boolean).join(" · "))}</div>
+    <h4><button type="button" data-id="${it.id}">${esc(it.name)}</button></h4>${intro}
+    <div class="foot">${stHtml(it.id)}<span data-rate="${it.id}">${rateHtml(it.id)}</span>${it.pmin ? `<span class="price">${won(it.pmin)}</span>` : ""}</div></div>
+  </article>`;
+}
+function paintRates() { document.querySelectorAll("[data-rate]").forEach(el => { el.innerHTML = rateHtml(el.dataset.rate); }); }
+
+/* ---------- 빠른 찾기 ---------- */
+const QUICK = [
+  { label: "지금 영업 중", tab: "food", f: it => status(it)?.open, dot: true },
+  { label: "8,000원 이하", tab: "food", f: it => it.pmin && it.pmin <= 8000 },
+  { label: "혼밥하기 좋은", tab: "food", f: solo },
+  { label: "늦게까지 여는", tab: "food", f: late },
+  { label: "단체 모임 가능", tab: "food", f: it => it.group === "O" },
+  { label: "학교 안 장소", tab: "place", f: it => it.inside === "O" },
+  { label: "공부하기 좋은", tab: "place", f: it => it.cat === "공부공간" }
+];
+const state = { tab: "food", cat: "", area: "", sort: "info", q: "", quick: null };
+document.getElementById("quick").innerHTML = QUICK.map((c, i) => `<button class="chip" type="button" data-q="${i}" aria-pressed="false">${c.dot ? `<span class="dot"></span>` : ""}${c.label}</button>`).join("");
+
+/* ---------- 안내 띠 ---------- */
+const find = n => ITEMS.find(it => it.name === n);
+const BANNER = [
+  ["5,000원", "학생식당 THE HUE", "1층 학생식당은 가장 비싼 메뉴도 5,000원. 방학엔 위층 교직원식당만 열어요."],
+  ["무료", "배가네국수", "교통대 학생이면 곱빼기가 공짜예요."],
+  ["예약", "캐럴실", "중앙도서관 3층 개인 열람실은 디지털정보센터 예약시스템으로 예약해요."],
+  ["W5", "종합강의관 1층", "은행, 우편, 프린트, 안경점이 한 층에 모여 있어요."]
+].filter(b => find(b[1]));
+document.getElementById("bannerList").innerHTML = BANNER.map(b => `<li><span class="n">${esc(b[0])}</span><a href="#" data-id="${find(b[1]).id}">${esc(b[1])}</a><p>${esc(b[2])}</p></li>`).join("");
+
+/* ---------- 관심사 ---------- */
+const TILES = [
+  { t: "학교 앞 맛집", s: "대학로", g: "food", go: { tab: "food", area: "대학로" } },
+  { t: "시내 맛집", s: "충주 시내", g: "food", go: { tab: "food", area: "충주 시내" } },
+  { t: "카페·디저트", s: "베이커리 포함", g: "cafe", go: { tab: "cafe" } },
+  { t: "캠퍼스 숨은 곳", s: "학교 안", g: "rest", go: { tab: "place", area: "O" } },
+  { t: "산책·야경", s: "학교 밖", g: "night", go: { tab: "place", area: "X" } }
+];
+document.getElementById("tiles").innerHTML = TILES.map((t, i) => {
+  const n = ITEMS.filter(it => it.kind === t.go.tab && (!t.go.area || (it.kind === "place" ? it.inside === t.go.area : it.area === t.go.area))).length;
+  return `<button class="tile" type="button" data-tile="${i}"><span class="pic">${art({ name: t.t }, t.g)}</span><span><b>${t.t}</b><small>${t.s} · ${n}곳</small></span></button>`;
+}).join("");
+
+/* ---------- 꿀팁 ---------- */
+const TIPS = [
+  ["곱빼기 0원", "배가네국수", "교통대 학생은 곱빼기 무료"],
+  ["최대 5,000원", "학생식당 THE HUE", "가장 비싼 메뉴도 5,000원, 방학엔 교직원식당 뷔페"],
+  ["엘리베이터", "인문사회예술대학 지름길 가는 법", "인사대 오르막은 건설환경관 엘리베이터로 줄여요"],
+  ["시험 기간", "생활관 독서실", "도서관 자리 경쟁을 피해 생활관 독서실로"],
+  ["3.26km", "교통대 둘레길", "정문에서 출발해 캠퍼스를 한 바퀴, 빠르게 걸으면 1시간"],
+  ["무료 대여", "소담스퀘어 충북", "스튜디오와 회의실을 네이버 예약으로 무료 이용"],
+  ["중국어 OK", "사천마라탕교통대점", "사장님과 중국어로 주문할 수 있어요"],
+  ["키오스크", "핵밥 교통대점", "말없이 혼자 주문할 수 있는 덮밥집"],
+  ["QR 태그", "종합강의관 휴게라운지", "1층은 모바일 학생증 QR, 3층은 자유 출입"],
+  ["모두 콘센트", "중앙도서관 3층 열람실", "전 좌석 콘센트·Wi-Fi, 같은 층에 CU"]
+].filter(t => find(t[1]));
+document.getElementById("tipRail").innerHTML = TIPS.map(t => `<button class="tip" type="button" data-id="${find(t[1]).id}"><span class="k">${esc(t[0])}</span><h4>${esc(t[2])}</h4><p>${esc(t[1])}</p></button>`).join("");
+
+/* ---------- 카드 줄 ---------- */
+function renderRails() {
+  document.getElementById("cheapRail").innerHTML = ITEMS.filter(it => it.kind === "food" && it.pmin && it.pmin <= 8000).sort((a, b) => a.pmin - b.pmin).map(card).join("");
+  document.getElementById("freeRail").innerHTML = ITEMS.filter(it => it.kind === "place" && it.inside === "O" && /휴식|공부/.test(it.cat || "")).sort((a, b) => infoScore(b) - infoScore(a)).map(card).join("");
+  document.getElementById("outRail").innerHTML = ITEMS.filter(it => it.kind === "place" && it.inside === "X" && /산책|러닝|야경|벚꽃|드라이브/.test(it.cat || "")).sort((a, b) => infoScore(b) - infoScore(a)).map(card).join("");
+}
+document.querySelectorAll(".arrows").forEach(a => {
+  const rail = document.getElementById(a.dataset.rail);
+  a.innerHTML = `<button type="button" aria-label="이전" data-d="-1">←</button><button type="button" aria-label="다음" data-d="1">→</button>`;
+  a.addEventListener("click", e => { const b = e.target.closest("button"); if (b) rail.scrollBy({ left: b.dataset.d * rail.clientWidth * 0.8, behavior: "smooth" }); });
+});
+
+/* ---------- 전체 목록 ---------- */
+const TABS = { ...KIND, fav: "찜한 곳" };
+const tabsEl = document.getElementById("tabs");
+const inTab = it => state.tab === "fav" ? FAV.has(it.id) : it.kind === state.tab;
+function renderTabs() {
+  tabsEl.innerHTML = Object.entries(TABS).map(([k, l]) => `<button class="tab" role="tab" type="button" data-tab="${k}" aria-selected="${state.tab === k}">${l} <span class="mono">${k === "fav" ? FAV.size : ITEMS.filter(i => i.kind === k).length}</span></button>`).join("");
+}
+function renderFilters() {
+  const pool = ITEMS.filter(inTab);
+  const fav = state.tab === "fav";
+  const cats = [...new Set(pool.map(i => i.cat).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ko"));
+  document.getElementById("fCat").innerHTML = `<option value="">분류 전체</option>` + cats.map(c => `<option ${state.cat === c ? "selected" : ""}>${esc(c)}</option>`).join("");
+  const areas = state.tab === "place" ? [["O", "학교 안"], ["X", "학교 밖"]] : ["교내", "대학로", "대소원면", "충주 시내", "충주 외곽"].filter(a => pool.some(i => i.area === a)).map(a => [a, a]);
+  const fa = document.getElementById("fArea");
+  fa.innerHTML = `<option value="">위치 전체</option>` + areas.map(([v, l]) => `<option value="${v}" ${state.area === v ? "selected" : ""}>${l}</option>`).join("");
+  fa.hidden = fav;
+  document.getElementById("fSort").value = state.sort;
+  document.querySelector('#fSort option[value="price"]').hidden = state.tab === "place";
+}
+function renderGrid() {
+  const q = state.q.trim().toLowerCase();
+  let list = ITEMS.filter(inTab)
+    .filter(it => !state.cat || it.cat === state.cat)
+    .filter(it => !state.area || (it.kind === "place" ? it.inside === state.area : it.area === state.area))
+    .filter(it => state.quick === null || QUICK[state.quick].f(it))
+    .filter(it => !q || [it.name, it.cat, it.loc, it.menu, it.intro, it.bld].join(" ").toLowerCase().includes(q));
+  if (state.sort === "name") list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+  else if (state.sort === "price") list.sort((a, b) => (a.pmin || 1e9) - (b.pmin || 1e9));
+  else if (state.sort === "review") list.sort((a, b) => reviewStats(b.id).n - reviewStats(a.id).n || infoScore(b) - infoScore(a));
+  else list.sort((a, b) => infoScore(b) - infoScore(a));
+  document.getElementById("count").textContent = `${list.length}곳`;
+  const sub = [state.q && `"${state.q}" 검색`, state.quick !== null && QUICK[state.quick].label].filter(Boolean).join(" · ");
+  document.getElementById("listSub").textContent = sub ? `${sub} 결과` : state.tab === "fav" ? "하트를 누른 곳이 여기에 모여요" : "카드를 누르면 자세한 정보와 리뷰가 나와요";
+  const empty = state.tab === "fav" && !FAV.size ? "아직 찜한 곳이 없어요. 카드 오른쪽 위의 하트를 눌러 보세요." : "조건에 맞는 곳이 없어요. 검색어를 줄이거나 필터를 '전체'로 바꿔 보세요.";
+  document.getElementById("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="none">${empty}</div>`;
+  paintStatus();
+}
+function renderList() { renderTabs(); renderFilters(); renderGrid(); }
+function goList(opts) {
+  Object.assign(state, { cat: "", area: "", quick: null }, opts);
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(Number(c.dataset.q) === state.quick)));
+  renderList();
+  document.getElementById("list").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+tabsEl.addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) { Object.assign(state, { tab: b.dataset.tab, cat: "", area: "", quick: null }); document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false")); renderList(); } });
+document.getElementById("fCat").addEventListener("change", e => { state.cat = e.target.value; renderGrid(); });
+document.getElementById("fArea").addEventListener("change", e => { state.area = e.target.value; renderGrid(); });
+document.getElementById("fSort").addEventListener("change", e => { state.sort = e.target.value; renderGrid(); });
+document.getElementById("searchForm").addEventListener("submit", e => {
+  e.preventDefault();
+  state.q = document.getElementById("q").value;
+  const q = state.q.trim().toLowerCase();
+  const best = Object.keys(KIND).map(k => [k, ITEMS.filter(it => it.kind === k && [it.name, it.cat, it.loc, it.menu, it.intro, it.bld].join(" ").toLowerCase().includes(q)).length]).sort((a, b) => b[1] - a[1])[0];
+  goList({ tab: q && best[1] ? best[0] : (state.tab === "fav" ? "food" : state.tab), q: state.q });
+});
+document.getElementById("q").addEventListener("input", e => { if (!e.target.value) { state.q = ""; renderGrid(); } });
+document.getElementById("quick").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  const i = Number(b.dataset.q);
+  goList({ tab: QUICK[i].tab, quick: state.quick === i ? null : i, q: state.q });
+});
+document.getElementById("tiles").addEventListener("click", e => { const b = e.target.closest(".tile"); if (!b) return; document.getElementById("q").value = ""; goList({ ...TILES[b.dataset.tile].go, q: "" }); });
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); goList({ tab: a.dataset.go }); }));
+document.getElementById("bannerCta").addEventListener("click", () => goList({ tab: "place", area: "O" }));
+document.getElementById("liveMore").addEventListener("click", () => goList({ tab: "food", quick: 0 }));
+
+/* ==========================================================
+   리뷰 (공유 저장소)
+   reviews/<사용자id>  = { r: { <장소id>: {stars, text, nick, photos:[assetId], at} } }  — 각자 자기 문서만 쓰기
+   reports/<사용자id>  = { r: { <리뷰키>: true } }                                     — 각자 신고 기록
+   mod/state           = { hidden: {<리뷰키>: true}, keep: {<리뷰키>: true} }            — 관리자만 쓰기
+   리뷰키 = 사용자id + "~" + 장소id
+   ========================================================== */
+const CAP = { db: null, user: null, assets: null, me: null, admin: false, canWrite: null, ready: false, failed: false };
+let REV = [];               // [{key, uid, item, stars, text, nick, photos, at}]
+let MYDOC = null;           // 내 reviews 문서 r
+let MOD = { hidden: {}, keep: {} };
+let REPORTS = {};           // key -> 신고 수
+let MYREP = {};             // 내가 신고한 key
+let NAMES = {};             // uid -> 이름 (관리자 화면용)
+const REPORT_LIMIT = 3;
+const BAD = /씨\s*발|시\s*발|ㅅ\s*ㅂ|ㅆ\s*ㅂ|병\s*신|ㅂ\s*ㅅ|좆|개\s*새\s*끼|개\s*색\s*기|지\s*랄|ㅈ\s*ㄹ|미\s*친\s*(놈|년|새)|닥\s*쳐|엿\s*먹|썅|느\s*금|fuck|shit|bitch/i;
+const keyOf = (uid, item) => `${uid}~${item}`;
+const isHidden = r => !!MOD.hidden[r.key] || ((REPORTS[r.key] || 0) >= REPORT_LIMIT && !MOD.keep[r.key]);
+function reviewStats(id) {
+  const list = REV.filter(r => r.item === id && !isHidden(r));
+  const n = list.length;
+  return { n, avg: n ? list.reduce((a, r) => a + r.stars, 0) / n : 0 };
+}
+const starStr = n => `<span class="stars" aria-label="별 ${n}개">${"★".repeat(n)}<span class="o">${"★".repeat(5 - n)}</span></span>`;
+const dateStr = ms => { const d = new Date(ms); return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`; };
+const photoUrl = id => "/_blob/" + encodeURIComponent(id);
+
+let writing = Promise.resolve();
+const queue = fn => (writing = writing.then(fn, fn));
+
+async function initCaps() {
+  const use = window.claude && window.claude.use ? n => window.claude.use(n).catch(() => null) : async () => null;
+  const [db, user, assets] = await Promise.all([use("db"), use("user"), use("assets")]);
+  Object.assign(CAP, { db, user, assets });
+  if (user) {
+    const [me, admin, canWrite] = await Promise.all([user.id(), user.canEdit(), user.can("data.write")]);
+    Object.assign(CAP, { me, admin, canWrite });
+  }
+  CAP.ready = true;
+  if (!db) { refreshOpen(); return; }
+  db.collection("reviews").onSnapshot(snap => {
+    const out = [];
+    MYDOC = null;
+    snap.docs.forEach(d => {
+      const r = (d.data() || {}).r || {};
+      if (d.id === CAP.me) MYDOC = r;
+      Object.entries(r).forEach(([item, v]) => {
+        if (!v || !BYID[item]) return;
+        const stars = Math.max(1, Math.min(5, Math.round(Number(v.stars) || 0)));
+        out.push({ key: keyOf(d.id, item), uid: d.id, item, stars, text: String(v.text || "").slice(0, 600), nick: String(v.nick || "").slice(0, 20), photos: Array.isArray(v.photos) ? v.photos.filter(p => typeof p === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(p)).slice(0, 3) : [], at: Number(v.at) || 0 });
+      });
+    });
+    REV = out.sort((a, b) => b.at - a.at);
+    onData();
+  }, () => { CAP.failed = true; refreshOpen(); });
+  db.doc("mod/state").onSnapshot(s => { const d = s.exists ? s.data() : {}; MOD = { hidden: { ...(d.hidden || {}) }, keep: { ...(d.keep || {}) } }; onData(); }, () => {});
+  db.collection("reports").onSnapshot(snap => {
+    const c = {}; MYREP = {};
+    snap.docs.forEach(d => { const r = (d.data() || {}).r || {}; Object.keys(r).forEach(k => { if (r[k]) { c[k] = (c[k] || 0) + 1; if (d.id === CAP.me) MYREP[k] = true; } }); });
+    REPORTS = c; onData();
+  }, () => {});
+  if (CAP.me) {
+    db.doc(`data/users/${CAP.me}/prefs`).get().then(s => {
+      const remote = s.exists && Array.isArray(s.data().fav) ? s.data().fav.filter(id => BYID[id]) : [];
+      const before = FAV.size;
+      remote.forEach(id => FAV.add(id));
+      if (remote.length !== FAV.size || before !== FAV.size) { saveFav(); renderList(); renderRails(); paintStatus(); }
+    }).catch(() => {});
+  }
+  if (CAP.admin) document.getElementById("adminBtn").hidden = false;
+}
+function onData() {
+  paintRates();
+  if (CAP.admin) {
+    const n = REV.filter(r => (REPORTS[r.key] || 0) > 0 && !MOD.keep[r.key] && !MOD.hidden[r.key]).length;
+    const b = document.getElementById("adminBadge"); b.hidden = !n; b.textContent = n;
+  }
+  refreshOpen();
+}
+function refreshOpen() {
+  if (sheet.hidden) return;
+  if (mode.kind === "item") { renderReviewList(mode.id); if (formNeedsRefresh(mode.id)) renderReviewForm(mode.id); }
+  else if (mode.kind === "admin") renderAdmin();
+}
+
+/* ---------- 상세 ---------- */
+const sheet = document.getElementById("sheet"), panel = document.getElementById("panel");
+let lastFocus = null, mode = { kind: null };
+function openSheet() { lastFocus = document.activeElement; sheet.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("closeBtn").focus(); }
+function openItem(id) {
+  const it = BYID[id]; if (!it) return;
+  mode = { kind: "item", id, formFor: undefined };
+  panel.className = "panel";
+  const fields = FIELDS(it);
+  const known = fields.filter(f => f[1]), unknown = fields.filter(f => !f[1]).map(f => f[0]);
+  if (!it.intro) unknown.unshift("소개");
+  const mapUrl = it.map && /^https?:/.test(it.map) ? it.map : null;
+  const refUrl = it.ref && /^https?:/.test(it.ref) ? it.ref : null;
+  panel.innerHTML = `<button class="close" type="button" aria-label="닫기" id="closeBtn">✕</button>
+    <div class="thumb">${art(it)}<span class="badge">${esc(it.kind === "place" && it.bld ? it.bld : (it.cat || KIND[it.kind]))}</span></div>
+    <div class="inner">
+      <div><div class="kicker">${esc([KIND[it.kind], it.cat, where(it), it.recs > 1 ? `${it.recs}명 추천` : null].filter(Boolean).join(" · "))}</div>
+      <h2 id="dName">${esc(it.name)}</h2>
+      <div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">${stHtml(it.id)}<span data-rate="${it.id}">${rateHtml(it.id)}</span></div></div>
+      ${it.intro ? `<p class="intro">${esc(it.intro)}</p>` : ""}
+      <div class="acts">
+        ${mapUrl ? `<a class="btn primary" href="${esc(mapUrl)}" target="_blank" rel="noopener">지도에서 보기</a>` : ""}
+        <button class="btn" type="button" data-fav="${it.id}" aria-pressed="${FAV.has(it.id)}" id="favDetail">${FAV.has(it.id) ? "♥ 찜한 곳" : "♡ 찜하기"}</button>
+        ${it.tel ? `<button class="btn" type="button" id="copyTel">전화번호 복사</button>` : ""}
+        ${refUrl ? `<a class="btn" href="${esc(refUrl)}" target="_blank" rel="noopener">참고한 페이지</a>` : ""}
+      </div>
+      ${known.length ? `<dl>${known.map(([k, v, c]) => `<dt>${k}</dt><dd class="${c || ""}">${esc(v)}</dd>`).join("")}</dl>` : ""}
+      ${it.oh && !it.oh.offKnown ? `<div class="todo">휴무일 기록이 없어서 "영업 중" 표시는 요일과 관계없이 계산했어요.</div>` : ""}
+      ${unknown.length ? `<div class="todo"><b>아직 모르는 정보</b> · ${unknown.join(", ")}<br>가 본 적 있다면 리뷰에 남겨 주세요.</div>` : ""}
+      <section class="reviews" aria-labelledby="h-rv">
+        <header><h3 id="h-rv">학생 리뷰</h3><span class="avg" id="rvAvg"></span></header>
+        <div id="rvForm"></div>
+        <div id="rvList"></div>
+      </section>
+    </div>`;
+  openSheet();
+  paintStatus();
+  renderReviewForm(id);
+  renderReviewList(id);
+  const ct = document.getElementById("copyTel");
+  if (ct) ct.addEventListener("click", () => navigator.clipboard?.writeText(it.tel).then(() => { ct.textContent = "복사했어요"; }).catch(() => { ct.textContent = it.tel; }));
+}
+function closeItem() { sheet.hidden = true; document.body.style.overflow = ""; mode = { kind: null }; pending.forEach(p => URL.revokeObjectURL(p.url)); pending = []; if (lastFocus && document.contains(lastFocus)) lastFocus.focus(); }
+
+function renderReviewList(id) {
+  const box = document.getElementById("rvList"); if (!box) return;
+  const st = reviewStats(id);
+  document.getElementById("rvAvg").innerHTML = st.n ? `<b>${st.avg.toFixed(1)}</b> / 5 · 리뷰 ${st.n}개` : "";
+  if (!CAP.ready) { box.innerHTML = `<div class="notice">리뷰를 불러오는 중…</div>`; return; }
+  if (!CAP.db) { box.innerHTML = `<div class="notice">${window.claude ? "리뷰는 claude.ai에 로그인한 상태로 이 페이지를 열면 보여요." : "학생 리뷰 기능은 준비 중이에요. 곧 열릴 예정이에요."}</div>`; return; }
+  const list = REV.filter(r => r.item === id && (!isHidden(r) || r.uid === CAP.me || CAP.admin));
+  box.innerHTML = list.length ? list.map(r => reviewHtml(r, false)).join("") : `<div class="notice">아직 리뷰가 없어요. 첫 리뷰를 남겨 주세요.</div>`;
+}
+function reviewHtml(r, admin) {
+  const hid = isHidden(r), mine = r.uid === CAP.me, reps = REPORTS[r.key] || 0;
+  const flags = [
+    hid ? `<span class="flag">${MOD.hidden[r.key] ? "관리자가 숨김" : `신고 ${reps}건 · 자동 숨김`}</span>` : "",
+    !hid && reps && (CAP.admin || admin) ? `<span class="flag">신고 ${reps}건</span>` : "",
+    mine && hid ? `<span class="flag">다른 사람에게는 안 보여요</span>` : ""
+  ].join("");
+  const who = admin ? `${esc(r.nick || "닉네임 없음")} <span style="font-weight:400;color:var(--faint)">(${esc(NAMES[r.uid] || "이름 확인 안 됨")})</span>` : esc(r.nick || "교통대 학생");
+  const photos = r.photos.length ? `<div class="photos">${r.photos.map(p => `<a href="${photoUrl(p)}" target="_blank" rel="noopener"><img src="${photoUrl(p)}" alt="리뷰 사진" loading="lazy" onerror="this.parentNode.innerHTML='<span class=gone>사진을 볼 수 없어요</span>'"></a>`).join("")}</div>` : "";
+  let tools = "";
+  if (admin) tools = `${hid ? `<button class="btn sm" type="button" data-act="restore" data-key="${esc(r.key)}">복원</button>` : `<button class="btn sm" type="button" data-act="hide" data-key="${esc(r.key)}">숨기기</button>`}<button class="btn sm danger" type="button" data-act="del" data-key="${esc(r.key)}">삭제</button><button class="btn sm" type="button" data-id="${r.item}">장소 보기</button>`;
+  else if (mine) tools = `<button class="btn sm" type="button" data-act="edit">수정</button><button class="btn sm danger" type="button" data-act="mydel" data-key="${esc(r.key)}">삭제</button>`;
+  else if (CAP.me && CAP.canWrite !== false) tools = `<button class="btn sm" type="button" data-act="report" data-key="${esc(r.key)}" aria-pressed="${!!MYREP[r.key]}">${MYREP[r.key] ? "신고 취소" : "신고"}</button>`;
+  if (CAP.admin && !admin && !mine) tools += `<button class="btn sm" type="button" data-act="${hid ? "restore" : "hide"}" data-key="${esc(r.key)}">${hid ? "복원" : "숨기기"}</button><button class="btn sm danger" type="button" data-act="del" data-key="${esc(r.key)}">삭제</button>`;
+  return `<article class="rv${hid ? " masked" : ""}">
+    <div>
+      ${admin ? `<div class="item">${esc(BYID[r.item]?.name || "")}</div>` : ""}
+      <div class="who"><b>${who}</b>${starStr(r.stars)}<span class="mono">${dateStr(r.at)}</span>${mine ? `<span>내 리뷰</span>` : ""}${flags}</div>
+      ${r.text ? `<p>${esc(r.text)}</p>` : ""}
+      ${photos}
+    </div>
+    ${tools ? `<div class="tools">${tools}</div>` : ""}
+  </article>`;
+}
+
+/* ---------- 리뷰 쓰기 ---------- */
+let pending = [];   // [{blob, url}]
+let draftStars = 0;
+function myReview(id) { return MYDOC && MYDOC[id] ? MYDOC[id] : null; }
+function formNeedsRefresh(id) { const has = !!myReview(id); if (mode.formFor === has) return false; return !mode.editing; }
+function renderReviewForm(id, editing) {
+  const box = document.getElementById("rvForm"); if (!box) return;
+  const mine = myReview(id);
+  mode.formFor = !!mine; mode.editing = !!editing;
+  if (!CAP.ready) { mode.formFor = undefined; box.innerHTML = ""; return; }
+  if (!CAP.db) { box.innerHTML = ""; return; }
+  if (!CAP.me || CAP.canWrite === false) { box.innerHTML = `<div class="notice">이 페이지에서 리뷰를 쓰려면 공유 설정에서 '참여(Contributor)' 이상의 권한이 필요해요. 지금은 읽기만 할 수 있어요.</div>`; return; }
+  if (mine && !editing) { box.innerHTML = ""; return; }
+  pending.forEach(p => URL.revokeObjectURL(p.url)); pending = [];
+  draftStars = mine ? mine.stars : 0;
+  const keep = mine && Array.isArray(mine.photos) ? mine.photos : [];
+  box.innerHTML = `<form class="form" id="rvF" novalidate>
+    <h4>${mine ? "내 리뷰 수정" : "리뷰 남기기"}</h4>
+    <div class="rate-in" role="radiogroup" aria-label="별점">${[1, 2, 3, 4, 5].map(n => `<button type="button" role="radio" aria-checked="${n === draftStars}" aria-label="${n}점" data-star="${n}" class="${n <= draftStars ? "on" : ""}">★</button>`).join("")}</div>
+    <textarea id="rvText" maxlength="500" placeholder="메뉴, 가격, 분위기, 혼밥 가능 여부처럼 신입생에게 도움이 될 이야기를 적어 주세요.">${esc(mine ? mine.text : "")}</textarea>
+    <input type="text" id="rvNick" maxlength="20" placeholder="닉네임 (비우면 '교통대 학생')" value="${esc(mine ? mine.nick : "")}">
+    ${CAP.assets ? `<div class="row"><span class="btn sm file">사진 추가 (최대 3장)<input type="file" id="rvPhoto" accept="image/png,image/jpeg,image/webp,image/gif" multiple></span><span class="hint">사진은 자동으로 줄여서 올려요</span></div><div class="previews" id="rvPrev"></div>` : `<div class="hint">사진 첨부는 이 페이지의 편집 권한이 있거나, 사진 올리기가 허용된 조직 구성원일 때만 가능해요.</div>`}
+    <div class="err" id="rvErr" role="alert"></div>
+    <div class="row"><span class="hint">욕설·비방은 등록되지 않고, 신고 ${REPORT_LIMIT}건이 쌓이면 자동으로 가려져요.</span>
+      <span style="display:flex;gap:8px">${mine ? `<button class="btn" type="button" data-act="cancel">취소</button>` : ""}<button class="btn primary" type="submit" id="rvSubmit">${mine ? "수정 완료" : "등록"}</button></span></div>
+  </form>`;
+  mode.keepPhotos = [...keep];
+  drawPreviews();
+}
+function drawPreviews() {
+  const box = document.getElementById("rvPrev"); if (!box) return;
+  box.innerHTML = mode.keepPhotos.map((p, i) => `<span><img src="${photoUrl(p)}" alt=""><button type="button" data-rmkeep="${i}" aria-label="사진 빼기">✕</button></span>`).join("")
+    + pending.map((p, i) => `<span><img src="${p.url}" alt=""><button type="button" data-rmnew="${i}" aria-label="사진 빼기">✕</button></span>`).join("");
+}
+async function shrink(file) {
+  try {
+    const bmp = await createImageBitmap(file);
+    const s = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas"); c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    const b = await new Promise(r => c.toBlob(r, "image/jpeg", 0.85));
+    return b || file;
+  } catch { return file; }
+}
+panel.addEventListener("change", async e => {
+  if (e.target.id !== "rvPhoto") return;
+  const room = 3 - mode.keepPhotos.length - pending.length;
+  const files = [...e.target.files].filter(f => /^image\//.test(f.type)).slice(0, Math.max(0, room));
+  e.target.value = "";
+  if (!files.length) { document.getElementById("rvErr").textContent = room <= 0 ? "사진은 3장까지 올릴 수 있어요." : ""; return; }
+  for (const f of files) { const blob = await shrink(f); pending.push({ blob, url: URL.createObjectURL(blob) }); }
+  drawPreviews();
+});
+panel.addEventListener("submit", async e => {
+  if (e.target.id !== "rvF") return;
+  e.preventDefault();
+  const id = mode.id, err = document.getElementById("rvErr"), btn = document.getElementById("rvSubmit");
+  const text = document.getElementById("rvText").value.trim(), nick = document.getElementById("rvNick").value.trim();
+  if (!draftStars) { err.textContent = "별점을 골라 주세요."; return; }
+  if (text.length < 5) { err.textContent = "리뷰는 5자 이상 적어 주세요."; return; }
+  if (BAD.test(text) || BAD.test(nick)) { err.textContent = "욕설이나 비방이 들어간 리뷰는 올릴 수 없어요. 표현을 바꿔 주세요."; return; }
+  btn.disabled = true; err.textContent = "";
+  try {
+    const ids = [...mode.keepPhotos];
+    for (const p of pending) {
+      btn.textContent = `사진 올리는 중 ${ids.length + 1}/${mode.keepPhotos.length + pending.length}`;
+      const up = await CAP.assets.upload(p.blob, { type: p.blob.type && /^image\/(png|jpeg|webp|gif)$/.test(p.blob.type) ? p.blob.type : "image/jpeg" });
+      ids.push(up.id);
+    }
+    btn.textContent = "저장 중…";
+    const rec = { stars: draftStars, text, nick, photos: ids, at: Date.now() };
+    const old = myReview(id);
+    await queue(() => CAP.db.doc("reviews/" + CAP.me).set({ r: { ...(MYDOC || {}), [id]: rec } }));
+    if (old && CAP.assets) old.photos?.filter(p => !ids.includes(p)).forEach(p => CAP.assets.delete(p).catch(() => {}));
+    pending.forEach(p => URL.revokeObjectURL(p.url)); pending = [];
+    MYDOC = { ...(MYDOC || {}), [id]: rec };
+    renderReviewForm(id, false);
+  } catch (x) {
+    const c = x && x.code;
+    err.textContent = c === "too_large" ? "사진이 너무 커요. 다른 사진을 골라 주세요."
+      : c === "unsupported_type" ? "이 형식의 사진은 올릴 수 없어요 (JPG, PNG, WEBP, GIF만)."
+      : c === "quota_or_state" || c === "quota_exceeded" ? "저장 공간이 가득 찼어요. 관리자에게 알려 주세요."
+      : c === "rate_limited" || c === "resource_exhausted" ? "잠시 후 다시 시도해 주세요."
+      : c === "invalid_argument" ? "리뷰를 쓸 권한이 없어요." : "저장하지 못했어요. 잠시 후 다시 시도해 주세요.";
+    btn.disabled = false; btn.textContent = myReview(id) ? "수정 완료" : "등록";
+  }
+});
+
+/* ---------- 신고 · 관리 ---------- */
+async function setMod(fn) {
+  const next = { hidden: { ...MOD.hidden }, keep: { ...MOD.keep } };
+  fn(next);
+  MOD = next; onData();
+  await queue(() => CAP.db.doc("mod/state").set(next));
+}
+async function removeReview(key) {
+  const r = REV.find(x => x.key === key); if (!r) return;
+  const snap = await CAP.db.doc("reviews/" + r.uid).get();
+  const map = { ...((snap.exists && snap.data().r) || {}) };
+  delete map[r.item];
+  await queue(() => CAP.db.doc("reviews/" + r.uid).set({ r: map }));
+  if (r.uid === CAP.me) MYDOC = map;
+  if (CAP.assets) r.photos.forEach(p => CAP.assets.delete(p).catch(() => {}));
+  if (MOD.hidden[key] || MOD.keep[key]) await setMod(m => { delete m.hidden[key]; delete m.keep[key]; });
+}
+panel.addEventListener("click", async e => {
+  const star = e.target.closest("[data-star]");
+  if (star) { draftStars = Number(star.dataset.star); panel.querySelectorAll("[data-star]").forEach(b => { const n = Number(b.dataset.star); b.classList.toggle("on", n <= draftStars); b.setAttribute("aria-checked", String(n === draftStars)); }); return; }
+  const rk = e.target.closest("[data-rmkeep]"); if (rk) { mode.keepPhotos.splice(Number(rk.dataset.rmkeep), 1); drawPreviews(); return; }
+  const rn = e.target.closest("[data-rmnew]"); if (rn) { const [p] = pending.splice(Number(rn.dataset.rmnew), 1); URL.revokeObjectURL(p.url); drawPreviews(); return; }
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const act = b.dataset.act, key = b.dataset.key;
+  try {
+    if (act === "edit") { renderReviewForm(mode.id, true); document.getElementById("rvText")?.focus(); return; }
+    if (act === "cancel") { pending.forEach(p => URL.revokeObjectURL(p.url)); pending = []; renderReviewForm(mode.id, false); return; }
+    b.disabled = true;
+    if (act === "report") {
+      const mine = { ...MYREP }; mine[key] ? delete mine[key] : (mine[key] = true);
+      await queue(() => CAP.db.doc("reports/" + CAP.me).set({ r: mine }));
+    } else if (act === "hide") await setMod(m => { m.hidden[key] = true; delete m.keep[key]; });
+    else if (act === "restore") await setMod(m => { delete m.hidden[key]; m.keep[key] = true; });
+    else if (act === "del" || act === "mydel") {
+      if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.disabled = false; b.textContent = "정말 삭제?"; return; }
+      await removeReview(key);
+      if (act === "mydel") renderReviewForm(mode.id, false);
+    }
+  } catch { b.disabled = false; b.textContent = "실패 · 다시 시도"; }
+});
+
+let admFilter = "reported";
+async function renderAdmin() {
+  const uids = [...new Set(REV.map(r => r.uid))];
+  if (CAP.user && uids.length) { try { const ps = await CAP.user.profiles(uids); uids.forEach(u => { NAMES[u] = ps[u]?.name || ""; }); } catch {} }
+  const reported = r => (REPORTS[r.key] || 0) > 0 || isHidden(r);
+  const list = REV.filter(r => admFilter === "all" ? true : admFilter === "hidden" ? isHidden(r) : reported(r))
+    .sort((a, b) => (REPORTS[b.key] || 0) - (REPORTS[a.key] || 0) || b.at - a.at);
+  const box = document.getElementById("admList"); if (!box) return;
+  document.getElementById("admCount").textContent = `${list.length}개 / 전체 ${REV.length}개`;
+  box.innerHTML = list.length ? list.map(r => reviewHtml(r, true)).join("") : `<div class="notice">${admFilter === "reported" ? "신고된 리뷰가 없어요." : "해당하는 리뷰가 없어요."}</div>`;
+}
+function openAdmin() {
+  mode = { kind: "admin" };
+  panel.className = "panel wide";
+  panel.innerHTML = `<button class="close" type="button" aria-label="닫기" id="closeBtn">✕</button>
+    <div class="inner">
+      <div><div class="kicker">관리자 전용</div><h2 id="dName">리뷰 관리</h2></div>
+      <div class="notice">신고가 ${REPORT_LIMIT}건 쌓인 리뷰는 자동으로 가려지고, 여기서 <b>복원</b>하거나 <b>삭제</b>할 수 있어요. 삭제하면 첨부 사진도 함께 지워지고 되돌릴 수 없어요. 괄호 안 이름은 관리자에게만 보여요.</div>
+      <div class="adm-top">
+        <select id="admF" aria-label="보기">
+          <option value="reported">신고·숨김된 리뷰</option><option value="hidden">숨김된 리뷰만</option><option value="all">전체 리뷰</option>
+        </select>
+        <span class="count" id="admCount"></span>
+      </div>
+      <div class="adm-list" id="admList"></div>
+    </div>`;
+  document.getElementById("admF").value = admFilter;
+  document.getElementById("admF").addEventListener("change", e => { admFilter = e.target.value; renderAdmin(); });
+  openSheet();
+  renderAdmin();
+}
+document.getElementById("adminBtn").addEventListener("click", openAdmin);
+
+/* ---------- 공통 클릭 ---------- */
+document.addEventListener("click", e => {
+  const f = e.target.closest("[data-fav]");
+  if (f) { e.preventDefault(); toggleFav(f.dataset.fav); if (f.id === "favDetail") f.textContent = FAV.has(f.dataset.fav) ? "♥ 찜한 곳" : "♡ 찜하기"; return; }
+  const t = e.target.closest("[data-id]");
+  if (t && (!sheet.contains(t) || mode.kind === "admin")) { e.preventDefault(); if (mode.kind === "admin") { sheet.hidden = true; } openItem(t.dataset.id); return; }
+  if (e.target === sheet || e.target.closest("#closeBtn")) closeItem();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !sheet.hidden) closeItem(); });
+
+document.getElementById("favCount").textContent = FAV.size;
+renderRails();
+renderList();
+setInterval(paintStatus, 60000);
+initCaps().then(() => { paintRates(); refreshOpen(); });
+</script>
+
+</body>
+</html>
